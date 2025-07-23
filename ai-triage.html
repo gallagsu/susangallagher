@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project: Human-in-the-loop AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Myanmar+Khayay&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>Susan Gallagher</h1>
+            <p class="subtitle">Product and UX designer</p>
+            <p class="tagline">Helping clients create better digital products.</p>
+            <a href="#contact" class="button">Contact me</a>
+            <nav class="project-links">
+                <a href="index.html">← Back to Projects</a>
+            </nav>
+        </aside>
+
+        <main class="projects">
+            <h2 class="page-title project-page">Human-in-the-loop AI</h2>
+            <span class="tagline">Designing a triage system for collaboration between AI and humans</span>
+
+            <!-- image -->
+            <!-- div class="project project3">
+                <div class="layer gradient-1"></div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/triage-desktop.png" alt="Screen 1" />
+                    </div>
+                </div>
+            </div -->
+            <img src="images/triage-support.gif" alt="Screen 1" class="responsive-gif" />
+            <!-- div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/16805629a2bf40c7923cce72a5ec8008?sid=963c50a6-e5e9-4ff0-a3ff-2f0e7dc6e329" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> -->
+
+            <h3>A Customer Support Triage System</h3>
+
+            <p class="page-paragraph-caps">
+                Current Product
+            </p>
+            <p class="page-paragraph">
+                Customers submit support tickets via a support form and chatbot.<br />
+                These tickets need to be triaged.<br />
+                They must be prioritized, categorized and routed to the correct department.
+            </p>
+            <p class="page-paragraph-caps">
+                Current Issues
+            </p>
+            <p class="page-paragraph">
+                Manual triage is slow and error-prone.<br />
+                AI can help, but human oversight is essential due to edge cases, tones and complexity with sensitive
+                issues.<br />
+                Misclassification causes delays, frustrates users and could cause compliance issues.
+            </p>
+
+            <h3>The Opportunity</h3>
+
+            <p class="page-paragraph">
+                This project explores using a “Human in the loop” AI powered interface to address the current issues,
+                where AI assists support agents with triaging tickets, to increase speed and accuracy.
+            </p>
+            <p class="page-paragraph-caps">Project Aims</p>
+            <p class="page-paragraph">
+                Speed up triage with AI powered intelligent suggestions for priority, category and routing.<br />
+                Make AI predictions transparent, and mistakes correctable in future.<br />
+                Ensure high trust between support agent and the system.
+            </p>
+
+            <h3>1. Research and Inspiration</h3>
+            <h4>1.1 Competitor Analysis</h4>
+
+            <!-- horizontal -->
+            <div class="project horizontal-layout">
+                <div class="layer gradient-1"></div>
+                <div class="project-content horizontal">
+                    <div class="project-image">
+                        <img src="images/zendesk_intelligent_triage.png" alt="Zendesk intelligent triage" />
+                    </div>
+                    <div class="project-info">
+                        <p class="page-paragraph-caps">Zendesk Triage</p>
+                        <p class="page-paragraph">This tool automatically detects:</p>
+                        <ol class="page-paragraph-ol">
+                            <li>Intent of the support ticket from a list</li>
+                            <li>Language used</li>
+                            <li>Sentiment of the customer</li>
+                        </ol>
+                        <p class="page-paragraph">This information can be used to automatically:</p>
+                        <ol class="page-paragraph-ol">
+                            <li>Route tickets to a specific department using rules</li>
+                            <li>Group similar requests for support agents</li>
+                            <li>Report on intent and sentiment over time</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- image -->
+            <div class="project horizontal-layout">
+                <div class="layer gradient-1"></div>
+                <div class="project-content horizontal">
+                    <div class="project-image">
+                        <img src="images/freshdesk-freddyAI2.png" alt="Zendesk intelligent triage" />
+                    </div>
+                    <div class="project-info">
+                        <p class="page-paragraph-caps">Freshdesk Smart Routing</p>
+                        <p class="page-paragraph">This tool automatically detects:</p>
+                        <ol class="page-paragraph-ol">
+                            <li>Type, priority and status of support request</li>
+                            <li>Allows customers to define custom fields</li>
+                        </ol>
+                        <p class="page-paragraph">Human in the loop - agents can accept or reject the
+                            suggestions.<br />The system also learns and adapts over time from “corrections” made by
+                            support agents.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- image -->
+            <div class="project horizontal-layout">
+                <div class="layer gradient-1"></div>
+                <div class="project-content horizontal">
+                    <div class="project-image large-image">
+                        <img src="images/front-helpdesk.png" alt="Zendesk intelligent triage" />
+                    </div>
+                    <div class="project-info">
+                        <p class="page-paragraph-caps">Front Helpdesk</p>
+                        <p class="page-paragraph">This tool automatically detects:</p>
+                        <ol class="page-paragraph-ol">
+                            <li>Adds type, priority and sentiment to support requests.</li>
+                            <li>Routes support requests to the right team member</li>
+                        </ol>
+                        <p class="page-paragraph">Agents can adjust the tags added before responding or re-routing the
+                            request.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>1.2 UX Pain Points</h4>
+            <p class="page-paragraph">
+                The solution should address the following common issues in AI-assisted UX:
+            </p>
+            <ul class="page-paragraph-ul">
+                <li><strong>Lack of Transparency: </strong>Why did AI choose this category, priority etc. ?</li>
+                <li><strong>User Overfidence in Automation: </strong>Show agents a confidence rate to flag potential
+                    issues</li>
+                <li><strong>Unlcear Override Process: </strong>Ensure its obvious how to fix AI's mistakes</li>
+                <li><strong>No Clear Feedback Loop: </strong>The system should accept feedback and learn from human
+                    corrections</li>
+            </ul>
+
+            <h4>1.3 Key Patterns</h4>
+            <p class="page-paragraph">
+                I identified the following interaction patterns that will be important when creating our new support
+                request triage system with the humans-in-the-loop design. They will help us to address the pain points
+                identified.
+            </p>
+            <div class="grid-container">
+                <div class="grid-box">
+                    <h4 class="box-title">Suggest & Confirm</h4>
+                    <p class="box-paragraph">AI clearly suggests tags, but humans can accept/reject.</p>
+                </div>
+                <div class="grid-box">
+                    <h4 class="box-title">Confidence Indicators</h4>
+                    <p class="box-paragraph">Model certainty on automated tags should be shown to agents.</p>
+                </div>
+                <div class="grid-box">
+                    <h4 class="box-title">Inline Feedback</h4>
+                    <p class="box-paragraph">Let the agent correct mistakes and give feedback.</p>
+                </div>
+                <div class="grid-box">
+                    <h4 class="box-title">Preview before Apply</h4>
+                    <p class="box-paragraph">Agents should clearly see the impact of any changes they make.</p>
+                </div>
+            </div>
+            <p class="page-paragraph">
+                I then did an exploration of how these patterns could be incorporated into the new design to balance
+                automation, with oversight and user control.
+            </p>
+
+            <!-- New full-width image block with text on top and columns underneath -->
+            <section class="project image-grid-layout">
+                <div class="layer gradient-1"></div>
+
+                <div class="project-content">
+                    <!-- Footer with title and text, matching other blocks -->
+                    <div class="project-info">
+                            <h4 class="box-title">Suggest & Confirm - Exploration</h4>
+                            <p class="page-paragraph">The following give the user a chance to view AI tag suggestions before accepting / rejecting them.</p>
+                    </div>
+                    <!-- Grid columns -->
+                    <div class="image-columns">
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option A</p>
+                            <img src="images/suggest1.png" alt="Concept A" />
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option B</p>
+                            <img src="images/suggest2a.png" alt="Concept B" />
+                        </div>
+                        <div class="column">
+                            <img src="images/suggest2b.png" alt="Concept B" style="margin-top: 2rem;" />
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option C</p>
+                            <img src="images/suggest3.png" alt="Concept C" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project image-grid-layout">
+                <div class="layer gradient-1"></div>
+
+                <div class="project-content">
+                    <!-- Footer with title and text, matching other blocks -->
+                    <div class="project-info">
+                            <h4 class="box-title">Confidence Indicators - Exploration</h4>
+                            <p class="page-paragraph">To add transparency, trust and help the agent, we should indicate the confidence in the AI suggestions.</p>
+                    </div>
+                    <!-- Grid columns -->
+                    <div class="image-columns">
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option A</p>
+                            <img src="images/confidence1.png" alt="Concept A" />
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option B</p>
+                            <img src="images/confidence2.png" alt="Concept B" />
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option C</p>
+                            <img src="images/confidence3.png" alt="Concept C"/>
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option D</p>
+                            <img src="images/confidence4.png" alt="Concept D" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project image-grid-layout">
+                <div class="layer gradient-1"></div>
+
+                <div class="project-content">
+                    <!-- Footer with title and text, matching other blocks -->
+                    <div class="project-info">
+                            <h4 class="box-title">Inline Feedback - Exploration</h4>
+                            <p class="page-paragraph">Allows agents to directly correct or disregard AI suggestions which provides feedback to the model. Thank you messages encourage agents to help the system learn.</p>
+                    </div>
+                    <!-- Grid columns -->
+                    <div class="image-columns">
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option A</p>
+                            <img src="images/inline1a.png" alt="Concept A" />
+                        </div>
+                        <div class="column">
+                            <img src="images/inline1b.png" alt="Concept B" style="margin-top: 2rem;" />
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option B</p>
+                            <img src="images/inline2.png" alt="Concept B"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project image-grid-layout">
+                <div class="layer gradient-1"></div>
+
+                <div class="project-content">
+                    <!-- Footer with title and text, matching other blocks -->
+                    <div class="project-info">
+                            <h4 class="box-title">Preview before Apply - Exploration</h4>
+                            <p class="page-paragraph">Lets the user see what the AI will do before the changed are applied.</p>
+                    </div>
+                    <!-- Grid columns -->
+                    <div class="image-columns">
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option A</p>
+                            <img src="images/preview1a.png" alt="Concept A" />
+                        </div>
+                        <div class="column">
+                            <img src="images/preview1b.png" alt="Concept A" style="margin-top: 2rem;" />
+                        </div>
+                        <div class="column">
+                            <p class="page-paragraph-caps-sm">Option B</p>
+                            <img src="images/preview2a.png" alt="Concept B" />
+                        </div>
+                        <div class="column">
+                            <img src="images/preview2b.png" alt="Concept B" style="margin-top: 2rem;" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <h3>2. Concept Development</h3>
+            <h4>2.1 Flow Diagrams</h4>
+            <p class="page-paragraph">The following flow diagram shows the human and AI interaction at different stages of the triage process.</p>
+            <!-- image -->
+            <div class="project project3">
+                <div class="layer gradient-1"></div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/flow-diagram.png" alt="Screen 1" />
+                    </div>
+                </div>
+            </div>
+
+            <h4>2.2 Clear Design Principles</h4>
+            <p class="page-paragraph">
+                <strong>Human First</strong><br/>
+                AI should accelerate decisions, not make them for the user. The human always has final say.<br/><br/>
+                
+                <strong>Confidence Should Be Visible</strong><br/>
+                Users deserve to know when the AI is not 100% sure. Confidence levels must be clearly communicated.<br/><br/>
+                
+                <strong>Correction is Collaboration</strong><br/>
+                When a user corrects the AI, it means the system is learning and will work better next time. The interface should encourage feedback as a type of collaboration.<br/><br/>
+                
+                <strong>No Surprises</strong><br/>
+                The user should at all times be aware of how their actions will affect the tickets they’re working on.
+            </p>
+
+            <h3>3. UX/UI Design</h3>
+            <p class="page-paragraph">The final stage was to work on a medium fidelity prototype to be able to test the proposed system.</p>
+
+            <h4>3.1 The Prototype</h4>
+
+            <div style="text-align: left;">
+              <a href="https://dean-pupil-00014994.figma.site/" class="button">View prototype <span class="arrow">→</span></a>
+            </div>
+
+            <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/d96aac52e7784143acf783f90e2e44e8?sid=975adc56-622d-47c0-89e5-37d511f0e0a0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+            <p class="page-paragraph">Explore how the agent reviews and confirms AI suggestions in the triage workflow prototype.</p>
+
+            <p class="page-paragraph">Throughout the prototype  I used the four key interaction patterns identified in the research phase as part of the solution. I also transparently indicated where AI was responsible for the content shown in the dashboard.</p>
+
+            <p class="page-paragraph-caps">Suggest & Confirm</p>
+            <ol class="page-paragraph-ol">
+                <li>The AI tag suggestions are clearly marked as suggestions in the triage panel and in the dropdown box values.</li>
+                <li>The AI summary is clearly flagged as being AI generated.</li>
+                <li>Human-in-the-loop The customer service agent triaging the ticket has a choice to turn on and off each tag checkbox and confirm which of the tag suggestions they accept.</li>
+            </ol>
+
+            <p class="page-paragraph-caps">Confidence Indicators</p>
+            <ol class="page-paragraph-ol">
+                <li>The confidence level in the tag suggestions is clearly shown at the top of the triage panel in the sidebar.</li>
+                <li>The confidence level is also shown beside the values when the dropdown boxes are opened.</li>
+                <li>An emoji is also shown as a shorthand easily identifiable icon to explain the confidence level.</li>
+            </ol>
+
+            <p class="page-paragraph-caps">Inline Feedback</p>
+            <ol class="page-paragraph-ol">
+                <li>The user is asked to “Accept” the suggestions, showing they can give feedback they are correct or not.</li>
+                <li>The user is then thanked for their feedback, and told the feedback helps the system learn encouraging future feedback.</li>
+            </ol>
+
+            <p class="page-paragraph-caps">Preview before Apply</p>
+            <ol class="page-paragraph-ol">
+                <li>When the user checks on or off a suggested tag value in the AI Suggestions box the associated dropdown field updates its value and has a highlight effect to draw attention and show the user the effect of their actions.</li>
+                <li>The user can preview the result of their actions before applying the changes using the “Save” button beneath the dropdown boxes.</li>
+            </ol>
+
+            <h3>4. Reflections and Next Steps</h3>
+
+            <p class="page-paragraph-caps">Key Learnings</p>
+            <ol class="page-paragraph-ol">
+                <li>for AI is about designing a collaborative product that involves human process and automation together.</li>
+                <li>It is crucial to make AI’s suggestions transparent and correctable.</li>
+                <li>Users should be able to trust the system they are using, but also feel in control of the final outcome.</li>
+                <li>Human-in-the-loop design should allow various levels of AI involvement across different parts of a product which will evolve over time as technology improves.</li>
+            </ol>
+
+            <p class="page-paragraph-caps">What I’d do next?</p>
+            <ol class="page-paragraph-ol">
+                <li>I’d add in extra information so users could see the reason AI came to the conclusions it did on both the Tag Suggestions and the Ticket Summary text. Showing users the reason behind it will build trust and transparency.</li>
+                <li>I’d design a triage flow that allows multiple similar tickets to be triaged at once.</li>
+                <li>I’d add in AI assistance in the “Reply” area of the dashboard where agents reply to the support request.</li>
+                <li>A mobile-friendly triage view that will allow for triage of urgent requests on the go.</li>
+            </ol>
+
+            <div style="text-align: left;">
+                <a href="index.html" class="button"><span class="arrow">&#8592;</span> Back to Projects</a>
+              </div>
+        </main>
+    </div>
+</body>
+
+</html>
