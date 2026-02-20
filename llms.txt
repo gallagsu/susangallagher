@@ -1,0 +1,4 @@
+# llms.txt — LLM / AI usage policy for this site
+
+User-agent: *
+Disallow: /

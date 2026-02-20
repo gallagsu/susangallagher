@@ -4,104 +4,159 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Susan Gallagher – UX Designer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Myanmar+Khayay&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <title>Susan Gallagher — Product & UX Designer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <div class="container">
+    <div class="layout">
         <aside class="sidebar">
-            <h1>Susan Gallagher</h1>
-            <p class="subtitle">Product & UX Designer</p>
-            <p class="tagline">Designing user-centred products with clear business impact.</p>
-            <p class="project-links-heading">Case Studies</p>
-            <nav class="project-links">
-                <a href="ai-triage.html">AI  Support Triage →</a>
-                <a href="hotel-booking-design.html">StayUX →</a>
-                <a href="onefabday.html">One Fab Day →</a>
-            </nav>
-            <a href="#contact" class="button">Contact me</a>
+            <div class="sidebar__inner">
+                <div class="sidebar__brand">
+                    <h1 class="sidebar__name"><a href="index.html">Susan Gallagher</a></h1>
+                    <p class="sidebar__subtitle">
+                        Product & UX designer, creating user-centred products with clear business impact.
+                    </p>
+                </div>
+
+                <div class="sidebar__nav">
+                    <p class="sidebar__heading">Case Studies</p>
+                    <nav class="sidebar__links" aria-label="Case studies">
+                        <a href="onefabday-casestudy.html">One Fab Day <span aria-hidden="true">→</span></a>
+                        <a href="babynames-casestudy.html">Rollercoaster.ie <span aria-hidden="true">→</span></a>
+                    </nav>
+                </div>
+
+                <div class="sidebar__nav">
+                    <p class="sidebar__heading">About</p>
+                    <nav class="sidebar__links" aria-label="About links">
+                        <a href="#about">About me</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                </div>
+
+                <a href="mailto:suegallagher@gmail.com" class="btn">Contact me</a>
+            </div>
         </aside>
 
-        <main class="projects">
+        <main class="content" id="top">
+            <section class="section section--plain section--home" id="work">
 
-            <!-- Project 3 -->
-            <section class="project project3">
-                <div class="layer gradient-1"></div>
+                <div class="worklist">
+                    <!-- Project 1 -->
+                    <article class="workitem">
+                        <a class="workitem__image" href="onefabday-casestudy.html" aria-label="View One Fab Day case study">
+                            <div class="workitem__grid">
+                                <img src="images/weddingbook-after.png" alt="One Fab Day case study hero image" />
+                            </div>
+                        </a>
 
-                <div class="project-content">
-                    <!-- Row 1: Image group -->
-                    <div class="project-images">
-                        <img src="images/triage-desktop.png" alt="Screen 1" />
-                    </div>
+                        <div class="workitem__body">
+                            <h4 class="card__title">Case Study: One Fab Day - Improving a Content-led Platform</h4>
 
-                    <!-- Row 2: Button + Text -->
-                    <div class="project-footer">
-                        <a href="ai-triage.html" class="button">View case study <span class="arrow">→</span></a>
-                        <div class="project-text">
-                            <h2>Human-in-the-loop AI</h2>
-                            <p>A triage system for collaboration between AI and humans</p>
+                            <p class="meta">
+                                Phased UX + content/workflow changes to connect editorial engagement to supplier
+                                outcomes.
+                            </p>
+
+                            <p class="meta meta--impact">
+                                <strong>Outcome:</strong> Outbound clicks 3x, partner renewals &gt;85%, approval cycle
+                                time
+                                50% faster.
+                            </p>
+
+                            <a class="btn" href="onefabday.html">View case study</a>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="workitem">
+                        <a class="workitem__image" href="babynames-casestudy.html" aria-label="View Rollercoaster case study">
+                            <div class="workitem__grid">
+                                <img src="images/rollercoaster-hero.png" alt="RollerCoaster case study hero image" />
+                            </div>
+                        </a>
+
+                        <div class="workitem__body">
+                            <h4 class="card__title">Case Study: Rollercoaster.ie - Turning Editorial into a Product</h4>
+
+                            <p class="meta">
+                                Designed a structured baby name database and search/filter experience.
+                            </p>
+
+                            <p class="meta meta--impact">
+                                <strong>Focus:</strong> Content model, Discovery loop, Tracking and Sponsor
+                                Opportunities.
+                            </p>
+
+                            <a class="btn" href="babynames-casestudy.html">View case study</a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
-            <!-- Project 1 -->
-            <section class="project project1">
-                <div class="layer layer-1"></div>
-                <div class="layer layer-2"></div>
-                <div class="layer layer-3"></div>
+            <section class="section section--tint" id="about">
+                <div class="section__head">
+                    <h3 class="section__title section__title--icon">
+                        Hello!
+                    </h3>
 
-                <div class="project-content">
-                    <!-- Row 1: Image group -->
-                    <div class="project-images">
-                        <img src="images/onefabday-homepage.png" alt="Screen 1" />
-                        <img src="images/onefabday-mobile.png" alt="Screen 2" />
-                    </div>
+                    <p class="lede">
+                        I’m a product &amp; UX designer with deep experience in content-led businesses and platforms
+                        where trust, discovery and measurable action all matter.
+                    </p>
 
-                    <!-- Row 2: Button + Text -->
-                    <div class="project-footer">
-                        <a href="onefabday.html" class="button">View case study <span class="arrow">→</span></a>
-                        <div class="project-text dark">
-                            <h2>One Fab Day</h2>
-                            <p>Ireland's leading wedding planning platform</p>
-                        </div>
-                    </div>
+                    <p class="meta">
+                        I’m strongest when I can connect user experience to systems underneath: information
+                        architecture, content models, workflows, instrumentation and business outcomes.
+                    </p>
                 </div>
             </section>
 
-            <!-- Project 2 -->
-            <section class="project project2">
-                <div class="layer crosses-bg"></div>
-                <!--div class="layer shape1"></div>
-                <div class="layer shape2"></div>
-                <div class="layer shape3"></div>
-                <div class="layer shape4"></div -->
+            <section class="section section--plain" id="contact">
+                <div class="section__head">
+                    <h3 class="section__title section__title--icon">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16v16H4V4Z" stroke="currentColor" stroke-width="1.7" />
+                                <path d="M4 6l8 7 8-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        Contact
+                    </h3>
 
-                <div class="project-content">
-                    
-                    <div class="project-images">
-                        <img src="images/stayux1.png" alt="Screen 1" />
-                        <img src="images/stayux2.png" alt="Screen 1" />
-                        <img src="images/stayux3.png" alt="Screen 1" />
-                    </div>
+                    <p class="lede">
+                        Want to talk about a project or role?
+                    </p>
+                </div>
 
-                    
-                    <div class="project-footer">
-                        <a href="hotel-booking-design.html" class="button">View case study <span class="arrow">→</span></a>
-                        <div class="project-text">
-                            <h2>Stay UX</h2>
-                            <p>Competing with the hotel aggregators for direct hotel bookings</p>
-                        </div>
-                    </div>
+                <div class="grid grid--2">
+                    <article class="card">
+                        <h4 class="card__title">Email</h4>
+                        <a class="btn" href="mailto:suegallagher@gmail.com">Email me</a>
+                    </article>
+
+                    <article class="card">
+                        <h4 class="card__title">LinkedIn</h4>
+                        <a class="btn" href="https://www.linkedin.com/in/susanbgallagher/" target="_blank"
+                            rel="noopener">View LinkedIn</a>
+                    </article>
                 </div>
             </section>
 
+            <footer class="footer">
+
+            </footer>
         </main>
-
     </div>
 </body>
 

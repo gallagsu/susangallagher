@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Rollercoaster.ie – Baby Names Database (Case Study)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__inner">
+        <div class="sidebar__brand">
+          <h1 class="sidebar__name"><a href="index.html">Susan Gallagher</a></h1>
+          <p class="sidebar__subtitle">
+            Product & UX designer, creating user-centred products with clear business impact.
+          </p>
+        </div>
+
+        <div class="sidebar__nav">
+          <p class="sidebar__heading">Case Studies</p>
+          <nav class="sidebar__links" aria-label="Case studies">
+            <a href="onefabday-casestudy.html">One Fab Day <span aria-hidden="true">→</span></a>
+            <a href="babynames-casestudy.html" aria-current="page">Rollercoaster.ie <span
+                aria-hidden="true">→</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar__nav">
+          <p class="sidebar__heading">About</p>
+          <nav class="sidebar__links" aria-label="About links">
+            <a href="index.html#about">About me</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+        </div>
+
+        <a href="mailto:suegallagher@gmail.com" class="btn">Contact me</a>
+      </div>
+    </aside>
+
+    <main class="content" id="top">
+      <header class="hero">
+        <h2 class="hero__title">
+          Rollercoaster.ie: Turning high-performing baby name editorial into a searchable product
+        </h2>
+
+        <p class="hero__intro">
+          Rollercoaster.ie already ranked strongly for baby name editorial, especially Irish name content. The
+          opportunity was to evolve that demand into a structured experience users could return to, while creating a
+          sponsor-ready surface for a high-value audience.
+        </p>
+
+        <p class="hero__intro">
+          As Product & UX Designer, I designed the end-to-end baby name database experience, including the content
+          schema, search and filter templates, and the editorial linking loop. The work was scoped to a WordPress CMS
+          with a small engineering team.
+        </p>
+
+        <p class="hero__intro hero__intro--emphasis">
+          Outcome target: increase repeat visits and pageviews per session by making baby name discovery searchable,
+          comparable and easy to act on.
+        </p>
+
+        <figure class="hero__media">
+          <img src="images/rollercoaster-homepage.png"
+            alt="Placeholder: Baby names search and filter experience (representative screen)" />
+          <figcaption class="hero__caption">
+            Baby Name Hub homepage showing name search, filters and themes.
+          </figcaption>
+        </figure>
+
+        <section class="facts" aria-label="Project details">
+          <div class="fact">
+            <p class="fact__label">Product</p>
+            <p class="fact__value">Rollercoaster.ie (Baby Names)</p>
+          </div>
+
+          <div class="fact">
+            <p class="fact__label">User goal</p>
+            <p class="fact__value">Choose a baby name confidently</p>
+          </div>
+
+          <div class="fact">
+            <p class="fact__label">Business goal</p>
+            <p class="fact__value">Repeat visits, pageviews, sponsor-ready surface</p>
+          </div>
+
+          <div class="fact">
+            <p class="fact__label">Constraints</p>
+            <p class="fact__value">WordPress CMS, small engineering team, no existing name database</p>
+          </div>
+        </section>
+      </header>
+
+      <section class="section section--plain" id="context">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z" stroke="currentColor" stroke-width="1.7"
+                  stroke-linejoin="round" />
+                <path d="M9 3v15M15 6v15" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+              </svg>
+            </span>
+            Context
+          </h3>
+
+          <p class="lede">
+            Baby name content was already the strongest-performing topic on the site. Editorial drove high search
+            traffic, strong social click-through and repeat reading among pregnant users. But the experience was
+            unstructured: users could read listicles, but they could not reliably search, compare or narrow down names
+            based on what mattered to them.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">What existed</h4>
+            <ul class="list">
+              <li>High-performing editorial articles (e.g. Irish names, trend roundups, themed lists of names)</li>
+              <li>Strong SEO footprint for long tail and Irish baby name queries</li>
+              <li>Clear sponsor demand for early-stage parenting audiences</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">What was missing</h4>
+            <ul class="list">
+              <li>No structured name database or content model</li>
+              <li>No repeatable way to browse, filter or compare names</li>
+              <li>No product loop between editorial and name exploration</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="callout" aria-label="Problem statement">
+          <p>
+            <strong>Problem:</strong>
+            We had demand, but not a product. While baby name articles were highly popular, users had no structured way
+            to compare, narrow or revisit names over multiple sessions.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section section--plain" id="opportunity">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M4 19h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M7 15l3-3 3 2 4-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            Opportunity framing
+          </h3>
+
+          <p class="lede">
+            The opportunity was to convert one-off reading into an ongoing decision journey: a searchable baby name
+            product that could increase repeat visits, deepen session engagement and create a place for
+            sponsorship.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">User need</h4>
+            <ul class="list">
+              <li>Search and filter names by practical criteria, not just article theme</li>
+              <li>Compare options quickly and open details when something looks promising</li>
+              <li>Discover more context when a name appears in themed editorial</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">Business value</h4>
+            <ul class="list">
+              <li>More pageviews per session through browsing results and individual name pages</li>
+              <li>More repeat visits over weeks as users shortlist names</li>
+              <li>A clear section sponsor proposition for pregnancy-stage advertisers</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--plain" id="hypothesis">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7" />
+                <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            Product hypothesis
+          </h3>
+
+          <p class="lede">
+            If we create a structured baby name system, users will return more often and consume more
+            pages per session, while sponsors gain a stable, high-intent audience.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">Expected user outcomes</h4>
+            <ul class="list">
+              <li>Easier shortlisting through search and filters</li>
+              <li>Confidence from meaning pages and editorial context</li>
+              <li>More intentional discovery beyond list articles</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">Expected business outcomes</h4>
+            <ul class="list">
+              <li>More repeat sessions during the baby name journey</li>
+              <li>Higher pageviews per session via browsing loops</li>
+              <li>More sponsor value through a defined section</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--plain" id="data-model">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M7 7v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M17 7v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            </span>
+            Designing the data model
+          </h3>
+
+          <p class="lede">
+            The core challenge was structural. Existing editorial was free text and there was no database. To enable
+            search, filtering and consistent meaning pages, I defined a “Name” content type that could be created,
+            edited and published within the existing WordPress workflow.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">Content schema: Custom post type “Name”</h4>
+            <ul class="list">
+              <li><strong>Core fields:</strong> meaning, origin, pronunciation, gender</li>
+              <li><strong>Popularity:</strong> rank by year where available (Ireland, UK, US)</li>
+              <li><strong>Themes:</strong> theme tags based on existing editorial groupings</li>
+              <li><strong>Editorial links:</strong> curated links to relevant articles featuring the name</li>
+            </ul>
+
+            <p class="meta meta--impact">
+              <strong>Design implication:</strong>
+              The name page could be a structured destination. That enabled filtering,
+              consistent layout and better internal linking.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">Constraints and technical fit</h4>
+            <ul class="list">
+              <li>Implemented as a WordPress custom post type (engineering familiarity)</li>
+              <li>Custom templates for search and results pages</li>
+              <li>Designed for editorial maintenance: fields were simple, consistent and easy to review</li>
+              <li>Future extensibility: themes could grow as trends emerged without restructuring the model</li>
+            </ul>
+
+            <p class="meta meta--impact">
+              <strong>Why this mattered:</strong>
+              A strong schema made quality scalable, which is essential for trust, SEO and browsing.
+            </p>
+          </article>
+        </div>
+
+        <div class="diagram diagram--stack flow" aria-label="Name content scheme and linking model">
+          
+          <div class="diagram diagram--3" aria-label="Core entities">
+            <div class="diagram__box">
+              <p class="diagram__title">Editorial articles (existing)</p>
+              <p class="diagram__meta">List posts, trends, “10 Irish names…”</p>
+              <p class="diagram__meta"><strong>New:</strong> linked Names (by ID)</p>
+            </div>
+
+            <div class="diagram__arrow" aria-hidden="true">↔</div>
+
+            <div class="diagram__box diagram__box--wide">
+              <p class="diagram__title">Name (Custom Post Type)</p>
+              <p class="diagram__meta">Structured entry powering search + name pages</p>
+
+              <ul class="diagram__list" aria-label="Name fields">
+                <li><strong>Meaning</strong>, <strong>Origin</strong>, <strong>Pronunciation</strong></li>
+                <li><strong>Gender</strong> (Boy / Girl / Unisex)</li>
+                <li><strong>Popularity rank</strong> by year (IE / UK / US — where available)</li>
+                <li><strong>Themes</strong> (from editorial + future additions)</li>
+                <li><strong>Linked editorial</strong> (IDs → “Featured in…”)</li>
+              </ul>
+            </div>
+
+            <div class="diagram__arrow" aria-hidden="true">↔</div>
+
+            <div class="diagram__box">
+              <p class="diagram__title">Themes (taxonomy)</p>
+              <p class="diagram__meta">Irish, vintage, minimalist, nature…</p>
+              <p class="diagram__meta">Seeded from existing editorial themes</p>
+            </div>
+          </div>
+
+          
+          <div class="diagram diagram--3" aria-label="Templates and outputs">
+            <div class="diagram__box">
+              <p class="diagram__title">Search + filter template</p>
+              <p class="diagram__meta">WordPress search + custom results layout</p>
+              <p class="diagram__meta">Filters: gender, origin, popularity, themes</p>
+            </div>
+
+            <div class="diagram__arrow" aria-hidden="true">→</div>
+
+            <div class="diagram__box">
+              <p class="diagram__title">Name detail template</p>
+              <p class="diagram__meta">Metadata layout + “Featured in…” editorial links</p>
+              <p class="diagram__meta">Related names (origin, gender, theme etc.)</p>
+            </div>
+
+            <div class="diagram__arrow" aria-hidden="true">→</div>
+
+            <div class="diagram__box">
+              <p class="diagram__title">Tracking + growth signals</p>
+              <p class="diagram__meta">Top searches, filters used, outbound clicks</p>
+              <p class="diagram__meta">Used to shape new editorial + social topics</p>
+            </div>
+          </div>
+        </div>
+        <figcaption class="media__caption">
+          Name content schema and linking model.
+        </figcaption>
+
+      </section>
+
+      <section class="section section--plain phase" id="search-filter">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.7" />
+                <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            </span>
+            Search and filter experience
+          </h3>
+
+          <p class="lede">
+            We used WordPress search to reduce engineering overhead, and designed custom templates to make results
+            scannable and decision-oriented. Filters were built to reflect how users browse names: by theme, origin,
+            popularity and gender.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">Search entry points</h4>
+            <ul class="list">
+              <li>Simple search for quick lookups</li>
+              <li>Filter-first browsing for exploration</li>
+              <li>Clear results layout that supports fast scanning</li>
+            </ul>
+
+            <p class="meta meta--impact">
+              <strong>Design choice:</strong>
+              Optimise for “find a shortlist quickly” rather than “read everything”.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">Filter set</h4>
+            <ul class="list">
+              <li>Theme filters seeded from existing editorial themes</li>
+              <li>Origin and gender as core constraints</li>
+              <li>Popularity where rank data existed (IE/UK/US)</li>
+            </ul>
+
+            <p class="meta meta--impact">
+              <strong>Design choice:</strong>
+              Start with filters we could support with confidence, then expand as new trends emerged.
+            </p>
+          </article>
+        </div>
+
+        <div class="media media--2">
+          <figure class="media__item">
+            <img src="images/rollercoaster-searchresults.png"
+              alt="Placeholder: search results layout with filters and name cards" />
+            <figcaption class="media__caption">
+              Search results page showing filters and scannable name cards.
+            </figcaption>
+          </figure>
+
+          <figure class="media__item">
+            <img src="images/rollercoaster-namepage.png"
+              alt="Placeholder: name meaning page with structured metadata and related content" />
+            <figcaption class="media__caption">
+              Name page with meaning, pronunciation, origin and links.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--plain phase" id="loop">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 7h10v10H7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                <path d="M7 12h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M12 7v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            </span>
+            Editorial and database loop
+          </h3>
+
+          <p class="lede">
+            The standout value was linking existing editorial demand into a structured browsing loop. Names surfaced
+            inside relevant articles linked through to the name pages. Name pages pointed back to multiple editorial
+            features. This kept users moving between inspiration and decision, increasing depth without relying on
+            endless new content.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">From editorial to names</h4>
+            <ul class="list">
+              <li>Editorial articles could link directly to name pages for names mentioned</li>
+              <li>Editorial could link to theme pages in the name directory for “show me names like this” navigation
+              </li>
+              <li>Reduced dead-ends where users finished an article and left</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">From name pages back to editorial</h4>
+            <ul class="list">
+              <li>Name pages surfaced the most relevant editorial features first</li>
+              <li>If no editorial match existed, show culturally similar names (same origin + gender)</li>
+              <li>Improved internal linking and SEO depth through structured navigation</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="callout" aria-label="Retention logic">
+          <p>
+            <strong>Retention logic:</strong>
+            Editorial captured attention. The database helped users shortlist. The linking loop kept users moving
+            between both until they reached a decision.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section section--plain" id="tracking">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M4 19h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M8 15V9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M12 15V7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M16 15v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            </span>
+            Tracking and growth strategy
+          </h3>
+
+          <p class="lede">
+            The product was designed to generate signals the editorial team could use to make smarter content choices
+            and identify emerging name trends.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">What we planned to track</h4>
+            <ul class="list">
+              <li>Most-used filters (to inform future editorial themes)</li>
+              <li>Top search queries (to identify rising names and gaps)</li>
+              <li>Outbound paths from editorial to names and themes to indicate trends</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">How it fed growth</h4>
+            <ul class="list">
+              <li>Create editorial from real search demand, not just hunches</li>
+              <li>Use trend signals for social and podcast topics</li>
+              <li>Strengthen SEO coverage by expanding structured name pages</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--plain" id="monetisation">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                <path
+                  d="M16 7.5c0-1.9-1.8-3.5-4-3.5s-4 1.2-4 3 1.1 2.6 3.6 3.2c2.9.7 4.4 1.7 4.4 3.6 0 2-1.8 3.7-4 3.7s-4-1.2-4-3.1"
+                  stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            Monetisation
+          </h3>
+
+          <p class="lede">
+            Baby naming attracts a high-intent, early-stage parenting audience. Sponsors value this stage because
+            parents often form loyal, long-term brand preferences early. The product supported both title sponsorship
+            and banner placements.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h4 class="card__title">Sponsor integration</h4>
+            <ul class="list">
+              <li>Section title sponsorship (e.g. “The ___ Baby Name Hub”)</li>
+              <li>Banner placements on results and name pages</li>
+              <li>Consistent sponsor exposure across high-intent browsing</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4 class="card__title">Why it was sponsor-ready</h4>
+            <ul class="list">
+              <li>Clear signal of the user demographics</li>
+              <li>Clear navigation destination beyond individual articles</li>
+              <li>Repeat visits and deeper sessions through browsing loops</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--payoff" id="reflection">
+        <div class="section__head">
+          <h3 class="section__title section__title--icon">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3Z" stroke="currentColor" stroke-width="1.7"
+                  stroke-linejoin="round" />
+                <path d="M3 12l9 4.5 9-4.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                <path d="M3 16l9 4.5 9-4.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+              </svg>
+            </span>
+            Reflection
+          </h3>
+
+          <p class="lede">
+            Building a structured product inside a CMS is a systems design problem. The UI is only as good as the
+            schema, the editorial workflow and the linking rules behind it. This project reinforced the value of
+            designing for maintainability and growth, not just launch.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card card--plain">
+            <h4 class="card__title">What I learned</h4>
+            <ul class="list">
+              <li>Content modelling is a core product skill, especially in editorial businesses</li>
+              <li>Search and filters are only as useful as the quality and consistency of structured data</li>
+              <li>Retention loops can come from linking strategy, not just feature complexity</li>
+            </ul>
+          </article>
+
+          <article class="card card--plain">
+            <h4 class="card__title">What I would do next</h4>
+            <ul class="list">
+              <li>Launch phase 2: favourites and shortlists with return prompts</li>
+              <li>Add AI helpers to help users find their ideal names</li>
+              <li>Refine theme taxonomy based on actual filter usage and search demand</li>
+            </ul>
+          </article>
+        </div>
+
+      </section>
+
+      <footer class="footer" id="contact">
+        <p class="note">
+          Screens shown are representative recreations used to illustrate design challenges and decisions.
+          Note: I left the team before implementation. Final shipped details may differ from the proposed design.
+        </p>
+      </footer>
+    </main>
+  </div>
+</body>
+
+</html>
