@@ -80,7 +80,8 @@ export function ContactForm() {
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const errorSummaryRef = useRef<HTMLParagraphElement>(null);
-  const statusRef = useRef<HTMLElement>(null);
+  const successRef = useRef<HTMLElement>(null);
+  const statusRef = useRef<HTMLParagraphElement>(null);
   const [values, setValues] = useState<FormValues>({
     name: "",
     email: "",
@@ -119,6 +120,11 @@ export function ContactForm() {
 
   useEffect(() => {
     if (status.type === "idle") {
+      return;
+    }
+
+    if (status.type === "success") {
+      successRef.current?.focus();
       return;
     }
 
@@ -247,7 +253,7 @@ export function ContactForm() {
   if (status.type === "success") {
     return (
       <section
-        ref={statusRef}
+        ref={successRef}
         tabIndex={-1}
         className={`${styles.contactConfirmation} ${styles.contactPageConfirmation}`}
         aria-live="polite"
@@ -406,11 +412,7 @@ export function ContactForm() {
           ref={statusRef}
           tabIndex={status.type !== "idle" ? -1 : undefined}
           className={`${styles.statusMessage} ${styles.contactPageStatus} ${
-            status.type === "success"
-              ? styles.statusSuccess
-              : status.type === "error"
-                ? styles.statusError
-                : ""
+            status.type === "error" ? styles.statusError : ""
           }`}
           role={status.type === "error" ? "alert" : "status"}
           aria-live={status.type === "error" ? "assertive" : "polite"}
