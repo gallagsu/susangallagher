@@ -3,6 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./site-pages.module.css";
 
+type FormField = "name" | "email" | "message";
+
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+  company: string;
+};
+
 type FormErrors = {
   name?: string;
   email?: string;
@@ -11,13 +20,44 @@ type FormErrors = {
 
 type FormStatus =
   | { type: "idle"; message: "" }
-  | { type: "success"; message: "Message sent. Thank you." }
-  | { type: "error"; message: "Something went wrong. Please try again." };
+  | {
+      type: "success";
+      message: "Your message has been sent. I will reply directly by email.";
+    }
+  | {
+      type: "error";
+      message: "Your message could not be sent right now. Please try again in a moment.";
+    };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function normalize(value: FormDataEntryValue | null) {
-  return typeof value === "string" ? value.trim() : "";
+function validateField(field: FormField, value: string) {
+  const trimmedValue = value.trim();
+
+  switch (field) {
+    case "name":
+      return trimmedValue ? undefined : "Please enter your name.";
+    case "email":
+      if (!trimmedValue) {
+        return "Please enter your email address.";
+      }
+
+      return emailPattern.test(trimmedValue)
+        ? undefined
+        : "Enter a valid email address, like name@example.com.";
+    case "message":
+      return trimmedValue
+        ? undefined
+        : "Please enter a short message so I know what you need.";
+  }
+}
+
+function validateValues(values: FormValues): FormErrors {
+  return {
+    name: validateField("name", values.name),
+    email: validateField("email", values.email),
+    message: validateField("message", values.message),
+  };
 }
 
 export function ContactForm() {
@@ -25,6 +65,14 @@ export function ContactForm() {
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const errorSummaryRef = useRef<HTMLParagraphElement>(null);
+  const statusRef = useRef<HTMLParagraphElement>(null);
+  const [values, setValues] = useState<FormValues>({
+    name: "",
+    email: "",
+    message: "",
+    company: "",
+  });
+  const [touched, setTouched] = useState<Partial<Record<FormField, true>>>({});
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState<FormStatus>({
@@ -33,7 +81,9 @@ export function ContactForm() {
   });
 
   useEffect(() => {
-    if (!errors.name && !errors.email && !errors.message) {
+    const hasErrors = Boolean(errors.name || errors.email || errors.message);
+
+    if (!hasErrors) {
       return;
     }
 
@@ -52,38 +102,83 @@ export function ContactForm() {
     }
   }, [errors]);
 
+  useEffect(() => {
+    if (status.type === "idle") {
+      return;
+    }
+
+    statusRef.current?.focus();
+  }, [status]);
+
+  function handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) {
+    const { name, value } = event.currentTarget;
+
+    setValues((currentValues) => ({
+      ...currentValues,
+      [name]: value,
+    }));
+
+    if (status.type !== "idle") {
+      setStatus({ type: "idle", message: "" });
+    }
+
+    if (name === "name" || name === "email" || name === "message") {
+      const field = name as FormField;
+
+      if (touched[field]) {
+        setErrors((currentErrors) => ({
+          ...currentErrors,
+          [field]: validateField(field, value),
+        }));
+      }
+    }
+  }
+
+  function handleBlur(
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) {
+    const { name, value } = event.currentTarget;
+
+    if (name !== "name" && name !== "email" && name !== "message") {
+      return;
+    }
+
+    const field = name as FormField;
+
+    setTouched((currentTouched) => ({
+      ...currentTouched,
+      [field]: true,
+    }));
+
+    setErrors((currentErrors) => ({
+      ...currentErrors,
+      [field]: validateField(field, value),
+    }));
+  }
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
     const payload = {
-      name: normalize(formData.get("name")),
-      email: normalize(formData.get("email")),
-      message: normalize(formData.get("message")),
-      company: normalize(formData.get("company")),
+      name: values.name.trim(),
+      email: values.email.trim(),
+      message: values.message.trim(),
+      company: values.company.trim(),
     };
 
-    const nextErrors: FormErrors = {};
-
-    if (!payload.name) {
-      nextErrors.name = "Enter your name.";
-    }
-
-    if (!payload.email) {
-      nextErrors.email = "Enter your email address.";
-    } else if (!emailPattern.test(payload.email)) {
-      nextErrors.email = "Enter a valid email address.";
-    }
-
-    if (!payload.message) {
-      nextErrors.message = "Enter a message.";
-    }
+    const nextErrors = validateValues(payload);
 
     setErrors(nextErrors);
+    setTouched({
+      name: true,
+      email: true,
+      message: true,
+    });
     setStatus({ type: "idle", message: "" });
 
-    if (Object.keys(nextErrors).length > 0) {
+    if (nextErrors.name || nextErrors.email || nextErrors.message) {
       return;
     }
 
@@ -102,35 +197,54 @@ export function ContactForm() {
         throw new Error("Request failed");
       }
 
-      form.reset();
+      setValues({
+        name: "",
+        email: "",
+        message: "",
+        company: "",
+      });
+      setTouched({});
       setErrors({});
-      setStatus({ type: "success", message: "Message sent. Thank you." });
+      setStatus({
+        type: "success",
+        message: "Your message has been sent. I will reply directly by email.",
+      });
     } catch {
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again.",
+        message:
+          "Your message could not be sent right now. Please try again in a moment.",
       });
     } finally {
       setIsSending(false);
     }
   }
 
+  const errorCount = [errors.name, errors.email, errors.message].filter(Boolean)
+    .length;
+  const errorSummary =
+    errorCount > 0
+      ? `Please check ${errorCount === 1 ? "the highlighted field" : `the ${errorCount} highlighted fields`} and try again.`
+      : "";
+
   return (
     <form
       className={`${styles.contactForm} ${styles.contactPageForm}`}
       onSubmit={handleSubmit}
       noValidate
+      aria-busy={isSending ? "true" : "false"}
     >
       <p
         id="contact-form-error-summary"
         ref={errorSummaryRef}
-        className={`${styles.statusMessage} ${styles.contactPageStatus}`}
-        role={errors.name || errors.email || errors.message ? "alert" : "status"}
-        aria-live={errors.name || errors.email || errors.message ? "assertive" : "polite"}
+        tabIndex={errorCount > 0 ? -1 : undefined}
+        className={`${styles.statusMessage} ${styles.contactPageStatus} ${
+          errorCount > 0 ? styles.statusError : ""
+        }`}
+        role={errorCount > 0 ? "alert" : "status"}
+        aria-live={errorCount > 0 ? "assertive" : "polite"}
       >
-        {errors.name || errors.email || errors.message
-          ? "Please correct the highlighted fields."
-          : ""}
+        {errorSummary}
       </p>
       <div className={styles.contactPageCompactRow}>
         <div className={`${styles.fieldGroup} ${styles.contactPageFieldGroup}`}>
@@ -146,6 +260,10 @@ export function ContactForm() {
             type="text"
             autoComplete="name"
             ref={nameRef}
+            value={values.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="Your name"
             className={`${styles.formInput} ${styles.contactPageInput}`}
             aria-invalid={errors.name ? "true" : "false"}
             aria-describedby={
@@ -175,6 +293,10 @@ export function ContactForm() {
             type="email"
             autoComplete="email"
             ref={emailRef}
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="name@example.com"
             className={`${styles.formInput} ${styles.contactPageInput}`}
             aria-invalid={errors.email ? "true" : "false"}
             aria-describedby={
@@ -203,6 +325,10 @@ export function ContactForm() {
           id="contact-message"
           name="message"
           ref={messageRef}
+          value={values.message}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder="A short note about the role, project or collaboration."
           className={`${styles.formTextarea} ${styles.contactPageTextarea}`}
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={
@@ -225,6 +351,8 @@ export function ContactForm() {
           id="contact-company"
           name="company"
           type="text"
+          value={values.company}
+          onChange={handleChange}
           tabIndex={-1}
           autoComplete="off"
         />
@@ -236,12 +364,20 @@ export function ContactForm() {
           className={`${styles.pageButton} ${styles.contactPageButton}`}
           disabled={isSending}
         >
-          {isSending ? "Sending..." : "Send message"}
+          {isSending ? "Sending message..." : "Send message"}
         </button>
         <p
-          className={`${styles.statusMessage} ${styles.contactPageStatus}`}
-          role="status"
-          aria-live="polite"
+          ref={statusRef}
+          tabIndex={status.type !== "idle" ? -1 : undefined}
+          className={`${styles.statusMessage} ${styles.contactPageStatus} ${
+            status.type === "success"
+              ? styles.statusSuccess
+              : status.type === "error"
+                ? styles.statusError
+                : ""
+          }`}
+          role={status.type === "error" ? "alert" : "status"}
+          aria-live={status.type === "error" ? "assertive" : "polite"}
         >
           {status.message}
         </p>

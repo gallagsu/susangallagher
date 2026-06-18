@@ -65,10 +65,10 @@ const prototypeItems = [
   {
     title: "Visual collection browsing",
     body: "Records are represented primarily through artwork, not text-heavy catalogue rows. Tap or hover to view record details.",
-    imageSrc: "/home/projects/vinyl-app-shelf-location.png",
-    imageAlt: "Vinyl Catalog App shelf and location support screens",
-    imageWidth: 1428,
-    imageHeight: 892,
+    imageSrc: "/home/projects/vinyl-app-browsing.png",
+    imageAlt: "Vinyl Catalog App browsing screens showing artwork-led collection views",
+    imageWidth: 1374,
+    imageHeight: 858,
   },
   {
     title: "Photo capture / catalogue entry",
@@ -97,10 +97,10 @@ const prototypeItems = [
   {
     title: "Shelf/location support",
     body: "The app supports the physical task of finding and putting records away.",
-    imageSrc: "/home/projects/vinyl-app-browsing.png",
-    imageAlt: "Vinyl Catalog App browsing screens showing artwork-led collection views",
-    imageWidth: 1374,
-    imageHeight: 858,
+    imageSrc: "/home/projects/vinyl-app-shelf-location.png",
+    imageAlt: "Vinyl Catalog App shelf and location support screens",
+    imageWidth: 1428,
+    imageHeight: 892,
   },
   {
     title: "Playing state / spinning record",

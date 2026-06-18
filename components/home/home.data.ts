@@ -7,7 +7,7 @@ const LINKEDIN_HREF = "https://www.linkedin.com/in/susanbgallagher/";
 export function getPrimaryNav(activeKey: SiteNavKey = null): NavItem[] {
   return [
     {
-      label: "CASE STUDIES",
+      label: "WORK",
       href: "/#selected-work",
       active: activeKey === "case-study",
     },
@@ -27,7 +27,7 @@ export function getPrimaryNav(activeKey: SiteNavKey = null): NavItem[] {
 export function getFooterNav(activeKey: SiteNavKey = null): NavItem[] {
   return [
     {
-      label: "CASE STUDIES",
+      label: "WORK",
       href: "/#selected-work",
       active: activeKey === "case-study",
     },

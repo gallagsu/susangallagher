@@ -124,7 +124,7 @@ function ProjectRow({
         {href ? (
           <Link
             href={href}
-            aria-label={`Open ${title} case study`}
+            aria-label={`Open ${title} work example`}
             className={styles.projectImageLink}
           >
             {imageContent}

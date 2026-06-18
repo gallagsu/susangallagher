@@ -21,14 +21,6 @@ const metadataItems = [
   },
 ];
 
-const evidenceItems = [
-  "Existing joining and payment workflows",
-  "Committee admin pain points",
-  "Member, household and guardian data needs",
-  "League team organisation requirements",
-  "Consent and junior-member responsibilities",
-];
-
 const observedPatterns = [
   {
     title: "Joining was dependent on manual follow-up",
@@ -226,31 +218,6 @@ export function KnightsOfEannaPage() {
           </div>
         </section>
 
-        <section className={styles.evidenceSection} aria-labelledby="evidence-used">
-          <div className={styles.sectionHeader} data-reveal>
-            <h2 id="evidence-used" className={styles.sectionLabelHeading}>
-              Evidence Used
-            </h2>
-          </div>
-          <div className={styles.evidenceGrid}>
-            <div className={styles.copyStack} data-reveal>
-              <p className={styles.bodyText}>
-                This was not a speculative concept exercise. The work was shaped
-                by practical operational needs, committee workflows and the
-                realities of managing members, payments and league organisation.
-              </p>
-              <ul className={styles.evidenceList}>
-                {evidenceItems.map((item) => (
-                  <li key={item} className={styles.evidenceListItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.evidenceBlank} aria-hidden="true" />
-          </div>
-        </section>
-
         <section className={styles.snapshotSection} aria-labelledby="observed-patterns">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="observed-patterns" className={styles.sectionHeading}>
@@ -346,20 +313,14 @@ export function KnightsOfEannaPage() {
               operational problem to working product.
             </p>
             <p className={styles.bodyText}>
-              AI helped with implementation, iteration and faster validation, but the product decisions remained grounded in the club’s
-              real workflows, data responsibilities and admin needs.
+              AI helped speed up implementation support, iteration and
+              validation, while the product decisions stayed grounded in the
+              club&apos;s real workflows, data responsibilities and privacy needs.
             </p>
             <p className={styles.bodyText}>
-              The AI element is not the whole story. It is part of how I now
-              work: using modern tools to prototype, build and test ideas
-              faster, while still making careful decisions about users, data,
-              privacy and real-world use.
-            </p>
-            <p className={styles.bodyText}>
-              I have also explored a responsible AI admin assistant for the
-              CRM: a read-only support layer that could help committee members
-              understand membership, household, renewal and consent data
-              without replacing human judgement.
+              I did not automate judgement-heavy admin decisions. Any AI support
+              stayed read-only and constrained around membership, household,
+              renewal and consent data.
             </p>
           </div>
         </section>
