@@ -1,4 +1,0 @@
-# robots.txt — block all crawling (search engines, AI bots, everything that obeys robots)
-
-User-agent: *
-Disallow: /
