@@ -30,8 +30,8 @@ export default function ContactPage() {
           data-reveal
           style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
         >
-          For product design, UX, strategy or AI-assisted build work, send a
-          short note and I’ll come back to you directly.
+          For product design, UX and strategy enquiries, please send a short
+          note and I’ll come back to you directly.
         </p>
         <div
           data-reveal

@@ -22,7 +22,7 @@ type FormStatus =
   | { type: "idle"; message: "" }
   | {
       type: "success";
-      message: "Your message has been sent. I will reply directly by email.";
+      message: "Thank you for your message. I will be in touch shortly.";
     }
   | {
       type: "error";
@@ -65,7 +65,7 @@ export function ContactForm() {
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const errorSummaryRef = useRef<HTMLParagraphElement>(null);
-  const statusRef = useRef<HTMLParagraphElement>(null);
+  const statusRef = useRef<HTMLElement>(null);
   const [values, setValues] = useState<FormValues>({
     name: "",
     email: "",
@@ -207,7 +207,7 @@ export function ContactForm() {
       setErrors({});
       setStatus({
         type: "success",
-        message: "Your message has been sent. I will reply directly by email.",
+        message: "Thank you for your message. I will be in touch shortly.",
       });
     } catch {
       setStatus({
@@ -226,6 +226,30 @@ export function ContactForm() {
     errorCount > 0
       ? `Please check ${errorCount === 1 ? "the highlighted field" : `the ${errorCount} highlighted fields`} and try again.`
       : "";
+
+  if (status.type === "success") {
+    return (
+      <section
+        ref={statusRef}
+        tabIndex={-1}
+        className={`${styles.contactConfirmation} ${styles.contactPageConfirmation}`}
+        aria-live="polite"
+        aria-labelledby="contact-confirmation-title"
+      >
+        <h2
+          id="contact-confirmation-title"
+          className={`${styles.contactConfirmationTitle} ${styles.contactPageConfirmationTitle}`}
+        >
+          Thank you!
+        </h2>
+        <p
+          className={`${styles.contactConfirmationMessage} ${styles.contactPageConfirmationMessage}`}
+        >
+          {status.message}
+        </p>
+      </section>
+    );
+  }
 
   return (
     <form
@@ -328,7 +352,6 @@ export function ContactForm() {
           value={values.message}
           onChange={handleChange}
           onBlur={handleBlur}
-          placeholder="A short note about the role, project or collaboration."
           className={`${styles.formTextarea} ${styles.contactPageTextarea}`}
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={

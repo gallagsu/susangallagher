@@ -139,6 +139,21 @@
   line-height: 1.3;
 }
 
+.contactPageConfirmation {
+  width: min(100%, 560px);
+  padding-top: 6px;
+}
+
+.contactPageConfirmationTitle {
+  font-size: 36px;
+}
+
+.contactPageConfirmationMessage {
+  max-width: 32ch;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .contactPageCompactRow {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -279,6 +294,39 @@
 
 .statusError {
   color: #8b1e1e;
+}
+
+.contactConfirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 0 0;
+}
+
+.contactConfirmation:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 6px;
+}
+
+.contactConfirmationTitle,
+.contactConfirmationMessage {
+  margin: 0;
+}
+
+.contactConfirmationTitle {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.016em;
+  line-height: 1.1;
+}
+
+.contactConfirmationMessage {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(6, 25, 7, 0.8);
 }
 
 .visuallyHidden {
