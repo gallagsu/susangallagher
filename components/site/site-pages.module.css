@@ -249,7 +249,7 @@
 
 .formInput[aria-invalid="true"],
 .formTextarea[aria-invalid="true"] {
-  border-color: var(--color-ink);
+  border-color: #8b1e1e;
 }
 
 .formTextarea {

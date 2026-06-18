@@ -30,25 +30,40 @@ type FormStatus =
     };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const fieldLabels: Record<FormField, string> = {
+  name: "the NAME field",
+  email: "the EMAIL field",
+  message: "the MESSAGE field",
+};
+
+function formatFieldList(fields: string[]) {
+  if (fields.length <= 1) {
+    return fields[0] ?? "";
+  }
+
+  if (fields.length === 2) {
+    return `${fields[0]} and ${fields[1]}`;
+  }
+
+  return `${fields.slice(0, -1).join(", ")}, and ${fields.at(-1)}`;
+}
 
 function validateField(field: FormField, value: string) {
   const trimmedValue = value.trim();
 
   switch (field) {
     case "name":
-      return trimmedValue ? undefined : "Please enter your name.";
+      return trimmedValue ? undefined : "Name is required.";
     case "email":
       if (!trimmedValue) {
-        return "Please enter your email address.";
+        return "Email is required.";
       }
 
       return emailPattern.test(trimmedValue)
         ? undefined
         : "Enter a valid email address, like name@example.com.";
     case "message":
-      return trimmedValue
-        ? undefined
-        : "Please enter a short message so I know what you need.";
+      return trimmedValue ? undefined : "Message is required.";
   }
 }
 
@@ -220,11 +235,13 @@ export function ContactForm() {
     }
   }
 
-  const errorCount = [errors.name, errors.email, errors.message].filter(Boolean)
-    .length;
+  const invalidFields = (Object.entries(errors) as [FormField, string | undefined][])
+    .filter(([, error]) => Boolean(error))
+    .map(([field]) => fieldLabels[field]);
+  const errorCount = invalidFields.length;
   const errorSummary =
     errorCount > 0
-      ? `Please check ${errorCount === 1 ? "the highlighted field" : `the ${errorCount} highlighted fields`} and try again.`
+      ? `Please check ${formatFieldList(invalidFields)} and try again.`
       : "";
 
   if (status.type === "success") {
@@ -291,16 +308,14 @@ export function ContactForm() {
             className={`${styles.formInput} ${styles.contactPageInput}`}
             aria-invalid={errors.name ? "true" : "false"}
             aria-describedby={
-              errors.name
-                ? "contact-form-error-summary contact-name-error"
-                : undefined
+              errors.name ? "contact-form-error-summary" : undefined
             }
           />
           <p
             id="contact-name-error"
             className={`${styles.fieldMessage} ${styles.contactPageFieldMessage}`}
           >
-            {errors.name ?? ""}
+            {""}
           </p>
         </div>
 
@@ -324,16 +339,14 @@ export function ContactForm() {
             className={`${styles.formInput} ${styles.contactPageInput}`}
             aria-invalid={errors.email ? "true" : "false"}
             aria-describedby={
-              errors.email
-                ? "contact-form-error-summary contact-email-error"
-                : undefined
+              errors.email ? "contact-form-error-summary" : undefined
             }
           />
           <p
             id="contact-email-error"
             className={`${styles.fieldMessage} ${styles.contactPageFieldMessage}`}
           >
-            {errors.email ?? ""}
+            {""}
           </p>
         </div>
       </div>
@@ -356,7 +369,7 @@ export function ContactForm() {
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={
             errors.message
-              ? "contact-form-error-summary contact-message-error"
+              ? "contact-form-error-summary"
               : undefined
           }
         />
@@ -364,7 +377,7 @@ export function ContactForm() {
           id="contact-message-error"
           className={`${styles.fieldMessage} ${styles.contactPageFieldMessage}`}
         >
-          {errors.message ?? ""}
+          {""}
         </p>
       </div>
 
