@@ -105,9 +105,9 @@ export const projectItems: ProjectItem[] = [
       "COMMERCIAL PRODUCT THINKING",
     ],
     image: {
-      foregroundSrc: "/home/projects/rollercoaster-homepage.png",
-      alt: "Rollercoaster.ie Baby Names homepage and search interface",
-      aspectRatio: "3024 / 3332",
+      foregroundSrc: "/home/projects/rollercoaster-casestudy.png",
+      alt: "Rollercoaster.ie Baby Names case study preview image",
+      aspectRatio: "1536 / 1024",
     },
   },
   {
