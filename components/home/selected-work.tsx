@@ -108,7 +108,15 @@ function ProjectRow({
     >
       <div className={styles.projectLead}>
         <p className={styles.sectionLabel}>{indexLabel}</p>
-        <h3 className={styles.projectTitle}>{title}</h3>
+        <h3 className={styles.projectTitle}>
+          {href ? (
+            <Link href={href} className={styles.projectTitleLink}>
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
+        </h3>
         <p className={styles.projectSummary}>{summary}</p>
         <ul className={styles.tagList} aria-label={`${title} project tags`}>
           {tags.map((tag) => (

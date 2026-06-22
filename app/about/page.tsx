@@ -38,8 +38,7 @@ export default function AboutPage() {
           </p>
           <p>
             That experience shaped how I approach product work: connecting user
-            needs, business goals and delivery realities, not just designing
-            isolated screens.
+            needs, business goals and delivery realities.
           </p>
           <p>
             Today, I’m focused on product and UX work where clarity,
