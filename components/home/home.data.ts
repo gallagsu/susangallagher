@@ -92,7 +92,21 @@ export const projectItems: ProjectItem[] = [
     },
   },
   {
-    indexLabel: "02 / PRODUCT DESIGN & BUILD",
+    indexLabel: "02 / PRODUCT DESIGN & STRATEGY",
+    title: "Rollercoaster.ie Baby Names",
+    href: "/case-studies/rollercoaster-baby-names",
+    summary:
+      "Turning proven parenting editorial demand into a structured product concept shaped by content modelling, search behaviour and commercial constraints.",
+    description:
+      "A selected case study in designing a searchable baby names experience within an existing CMS: connecting editorial traffic, repeat discovery, sponsor value and maintainable content structure.",
+    tags: [
+      "SEARCH & FILTER UX",
+      "CONTENT MODELLING",
+      "COMMERCIAL PRODUCT THINKING",
+    ],
+  },
+  {
+    indexLabel: "03 / PRODUCT DESIGN & BUILD",
     title: "Knights of Éanna",
     href: "/work/knights-of-eanna",
     summary:
@@ -108,7 +122,7 @@ export const projectItems: ProjectItem[] = [
     },
   },
   {
-    indexLabel: "03 / MOBILE & INTERACTION DESIGN",
+    indexLabel: "04 / MOBILE & INTERACTION DESIGN",
     title: "Vinyl Catalog App",
     href: "/work/vinyl-catalog",
     summary:
