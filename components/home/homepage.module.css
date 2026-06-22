@@ -2,7 +2,7 @@
   background: var(--color-surface);
   color: var(--color-ink);
   min-height: 100vh;
-  --type-display-xl-size: 60px;
+  --type-display-xl-size: 56px;
   --type-display-lg-size: 38px;
   --type-serif-md-size: 23px;
   --type-brand-size: 20px;
