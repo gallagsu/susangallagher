@@ -409,8 +409,8 @@ export function OneFabDayPage() {
             </p>
           </div>
           <div className={styles.closingActions} data-reveal>
-            <Link href="/contact" className={styles.contactButton}>
-              Start a conversation
+            <Link href="/#selected-work" className={styles.contactButton}>
+              My work
             </Link>
           </div>
         </section>

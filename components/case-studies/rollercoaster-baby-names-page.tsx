@@ -46,13 +46,6 @@ const schemaFields = [
   "Related editorial links",
 ];
 
-const filterItems = [
-  "Theme",
-  "Origin",
-  "Gender",
-  "Popularity where data was available",
-];
-
 const designDecisions = [
   "Start with filters the team could support confidently.",
   "Use editorial themes as a practical starting taxonomy.",
@@ -72,25 +65,6 @@ const proofItems = [
   "Designed the schema, search and filter experience, and editorial linking loop.",
   "Connected user discovery, CMS maintainability and commercial opportunity.",
 ];
-
-function Placeholder({
-  label,
-  className = "",
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`${styles.placeholder} ${className}`.trim()}
-      role="img"
-      aria-label={label}
-      data-reveal
-    >
-      <span className={styles.placeholderLabel}>{label}</span>
-    </div>
-  );
-}
 
 function InlineImage({
   src,
@@ -287,6 +261,10 @@ export function RollercoasterBabyNamesPage() {
                 <p className={styles.bodyText}>
                   I defined a <strong>Name</strong> content type that could work
                   within the existing WordPress editorial workflow.
+                  A strong schema made the experience searchable, maintainable
+                  and scalable. It allowed the team to create consistent name
+                  pages, power filters, support internal linking and extend the
+                  product over time without redesigning the system.
                 </p>
               </div>
               <div className={styles.schemaPanel}>
@@ -299,21 +277,8 @@ export function RollercoasterBabyNamesPage() {
                   ))}
                 </ul>
               </div>
-              <div className={styles.judgementBlock}>
-                <p className={styles.judgementLabel}>Why it mattered</p>
-                <p className={styles.judgementText}>
-                  A strong schema made the experience searchable, maintainable
-                  and scalable. It allowed the team to create consistent name
-                  pages, power filters, support internal linking and extend the
-                  product over time without redesigning the system.
-                </p>
-              </div>
             </div>
           </div>
-          <Placeholder
-            label="Simple schema diagram showing editorial articles linked to a Name content type and then out to themes, search and name pages"
-            className={styles.inlinePlaceholder}
-          />
         </section>
 
         <section className={styles.decisionsSection} aria-labelledby="search-filters">
@@ -328,18 +293,11 @@ export function RollercoasterBabyNamesPage() {
                   The experience was designed around fast scanning and practical
                   shortlisting rather than deep reading. Users could search
                   directly, browse through filters, open detail pages, and move
-                  between names and related editorial.
+                  between names and related editorial. The aim was to make the
+                  product useful quickly: compact name cards handled scanning,
+                  detail pages carried the context, and editorial links kept
+                  discovery moving.
                 </p>
-                <div className={styles.filterGroup}>
-                  <p className={styles.schemaHeading}>Filters</p>
-                  <ul className={styles.checkList}>
-                    {filterItems.map((item) => (
-                      <li key={item} className={styles.checkListItem}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
               <div className={styles.schemaPanel}>
                 <p className={styles.schemaHeading}>Design decisions</p>
@@ -350,14 +308,6 @@ export function RollercoasterBabyNamesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className={styles.judgementBlock}>
-                <p className={styles.judgementLabel}>Interface direction</p>
-                <p className={styles.judgementText}>
-                  The aim was to make the product useful quickly. Compact name
-                  cards handled scanning. Detail pages carried the context.
-                  Editorial links kept discovery moving.
-                </p>
               </div>
             </div>
           </div>
@@ -421,7 +371,7 @@ export function RollercoasterBabyNamesPage() {
           </div>
         </section>
 
-        <section className={styles.evidenceSection} aria-labelledby="commercial-logic">
+        <section className={styles.copySection} aria-labelledby="commercial-logic">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="commercial-logic" className={styles.sectionHeading}>
               Commercial logic
@@ -449,12 +399,7 @@ export function RollercoasterBabyNamesPage() {
 
         <div className={styles.divider} aria-hidden="true" data-line-reveal />
 
-        <section className={styles.resultsSection} aria-labelledby="what-this-shows">
-          <div className={styles.sectionHeader} data-reveal>
-            <h2 id="what-this-shows" className={styles.sectionHeading}>
-              What this shows
-            </h2>
-          </div>
+        <section className={styles.resultsSection}>
           <div className={styles.copyStack} data-reveal>
             <p className={styles.bodyText}>
               This project shows how I think about product design in
@@ -490,14 +435,15 @@ export function RollercoasterBabyNamesPage() {
         <section className={styles.copySection}>
           <div className={styles.copyStack} data-reveal>
             <p className={styles.endNote}>
-              Product and UX strategy/design work completed before handover.
-              Screens are representative recreations used to illustrate the
-              design decisions.
+              This case study focuses on product and UX strategy/design work
+              completed before handover to engineering. Screens are
+              representative recreations used to illustrate the thinking and
+              proposed experience.
             </p>
           </div>
           <div className={styles.closingActions} data-reveal>
-            <Link href="/contact" className={styles.contactButton}>
-              Start a conversation
+            <Link href="/#selected-work" className={styles.contactButton}>
+              My work
             </Link>
           </div>
         </section>
