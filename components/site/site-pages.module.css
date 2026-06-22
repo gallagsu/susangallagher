@@ -71,7 +71,7 @@
 }
 
 .contactPageSection {
-  gap: 10px;
+  gap: 4px;
 }
 
 .contactPageHeader {
@@ -90,12 +90,12 @@
 
 .contactPageForm {
   width: min(100%, 560px);
-  gap: 6px;
+  gap: 2px;
   padding-top: 0;
 }
 
 .contactPageFieldGroup {
-  gap: 4px;
+  gap: 2px;
 }
 
 .contactPageLabel {
@@ -157,7 +157,7 @@
 .contactPageCompactRow {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 
 .pageButton {
