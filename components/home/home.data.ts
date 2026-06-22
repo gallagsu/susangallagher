@@ -81,7 +81,7 @@ export const projectItems: ProjectItem[] = [
     title: "One Fab Day",
     href: "/case-studies/one-fab-day",
     summary:
-      "Founder-led product and commercial judegement behind an acquired digital business.",
+      "Founder-led product and commercial judgement behind an acquired digital business.",
     description:
       "A luxury wedding brand and digital platform that grew into a major commercial success and was acquired by a prominent media company.",
     tags: ["PRODUCT DESIGN", "BRAND BUILDING", "COMMERCIAL UX STRATEGY"],
