@@ -96,9 +96,9 @@ export const projectItems: ProjectItem[] = [
     title: "Rollercoaster.ie Baby Names",
     href: "/case-studies/rollercoaster-baby-names",
     summary:
-      "Turning proven parenting editorial demand into a structured product concept shaped by content modelling, search behaviour and commercial constraints.",
+      "Turning proven parenting editorial demand into a structured product shaped by content modelling, search data and commercial constraints.",
     description:
-      "A selected case study in designing a searchable baby names experience within an existing CMS: connecting editorial traffic, repeat discovery, sponsor value and maintainable content structure.",
+      "A searchable baby names experience within an existing CMS: connecting editorial traffic, repeat discovery, sponsor value and maintainable content structure.",
     tags: [
       "SEARCH & FILTER UX",
       "CONTENT MODELLING",

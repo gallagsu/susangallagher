@@ -190,6 +190,15 @@
   color: color-mix(in srgb, var(--color-ink) 78%, transparent);
 }
 
+.endNote {
+  max-width: 720px;
+  font-family: var(--font-sans);
+  font-size: var(--type-ui-size);
+  font-weight: 500;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-ink) 72%, transparent);
+}
+
 .placeholder {
   position: relative;
   overflow: hidden;

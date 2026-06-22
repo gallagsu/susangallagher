@@ -8,20 +8,8 @@ import styles from "./rollercoaster-baby-names-page.module.css";
 
 const metadataItems = [
   {
-    label: "Product",
-    value: "Rollercoaster.ie Baby Names",
-  },
-  {
-    label: "Organisation",
-    value: "DMG Media Ireland",
-  },
-  {
     label: "Role",
     value: "Product & UX Design / Head of UX",
-  },
-  {
-    label: "User goal",
-    value: "Choose a baby name confidently",
   },
   {
     label: "Business goal",
@@ -31,14 +19,6 @@ const metadataItems = [
     label: "Constraints",
     value: "WordPress CMS, small engineering team, no existing name database",
   },
-];
-
-const tags = [
-  "Product discovery",
-  "Search and filter UX",
-  "Content modelling",
-  "Commercial UX",
-  "CMS constraints",
 ];
 
 const productValueItems = [
@@ -162,8 +142,7 @@ export function RollercoasterBabyNamesPage() {
               data-load-reveal
               style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
             >
-              Turning high-performing editorial demand into a searchable
-              product experience.
+              Turning editorial demand into a baby names product experience.
             </p>
             <p
               className={styles.heroSummary}
@@ -171,11 +150,8 @@ export function RollercoasterBabyNamesPage() {
               style={{ "--reveal-delay": "210ms" } as React.CSSProperties}
             >
               Rollercoaster.ie already had strong-performing baby name
-              editorial, especially around Irish names and themed name lists.
-              The opportunity was to turn that demand into a structured product
-              experience: something users could search, filter, compare and
-              return to over time, while creating a clearer sponsor-ready
-              surface for a valuable early-parenting audience.
+              editorial. The opportunity was to turn that demand into a structured product experience: something users could search, filter, compare and
+              return to over time, while creating a clearer sponsor-ready surface for a valuable early-parenting audience.
             </p>
           </div>
           <dl
@@ -190,27 +166,6 @@ export function RollercoasterBabyNamesPage() {
               </div>
             ))}
           </dl>
-          <div
-            className={styles.tagList}
-            aria-label="Case study topics"
-            data-load-reveal
-            style={{ "--reveal-delay": "350ms" } as React.CSSProperties}
-          >
-            {tags.map((tag) => (
-              <span key={tag} className={styles.tagPill}>
-                {tag}
-              </span>
-            ))}
-          </div>
-          <p
-            className={styles.statusNote}
-            data-load-reveal
-            style={{ "--reveal-delay": "420ms" } as React.CSSProperties}
-          >
-            Product and UX strategy/design work completed before handover.
-            Screens are representative recreations used to illustrate the
-            design decisions.
-          </p>
         </section>
 
         <figure className={styles.heroFigure} data-reveal>
@@ -224,8 +179,8 @@ export function RollercoasterBabyNamesPage() {
             sizes="(max-width: 900px) 100vw, 920px"
           />
           <figcaption className={styles.heroCaption}>
-            Fig 1. Representative recreation of the Baby Names product
-            direction across hub, results and detail views.
+            Fig 1. 
+            The Baby Names product direction.
           </figcaption>
         </figure>
 
@@ -234,9 +189,7 @@ export function RollercoasterBabyNamesPage() {
             <article className={styles.snapshotCard} data-reveal>
               <h3 className={styles.snapshotTitle}>Problem</h3>
               <p className={styles.snapshotText}>
-                Strong baby-name editorial existed, but users were still moving
-                through one-off articles rather than a structured discovery
-                experience.
+                Strong baby-name editorial existed, but the value of that evergreen content was underutilised.
               </p>
             </article>
             <article
@@ -246,8 +199,8 @@ export function RollercoasterBabyNamesPage() {
             >
               <h3 className={styles.snapshotTitle}>Decision</h3>
               <p className={styles.snapshotText}>
-                Turn proven editorial demand into a searchable product with a
-                clear content model, practical filters and stronger internal
+                Turn baby name demand into a searchable product with a
+                clear content model, filters and stronger internal
                 linking.
               </p>
             </article>
@@ -258,7 +211,7 @@ export function RollercoasterBabyNamesPage() {
             >
               <h3 className={styles.snapshotTitle}>What it enabled</h3>
               <p className={styles.snapshotText}>
-                A clearer route from inspiration to shortlisting, plus a more
+                A clearer route from inspiration to shortlisting names, plus a more
                 coherent destination for repeat browsing and sponsorship.
               </p>
             </article>
@@ -277,11 +230,6 @@ export function RollercoasterBabyNamesPage() {
                 engagement and repeat interest from pregnant users.
               </p>
               <p className={styles.bodyText}>
-                But the experience was mostly article-based: users could read
-                lists and trend pieces, but they could not easily search,
-                compare, narrow or revisit names across multiple sessions.
-              </p>
-              <p className={styles.bodyText}>
                 The opportunity was to convert one-off editorial reading into an
                 ongoing discovery journey: a searchable baby name product that
                 could support browsing, shortlisting, deeper sessions and
@@ -294,7 +242,7 @@ export function RollercoasterBabyNamesPage() {
               style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
             >
               <p className={styles.pullQuoteText}>
-                We had demand, but not yet a product.
+                We had clear demand, but not yet a product.
               </p>
             </blockquote>
           </div>
@@ -303,15 +251,8 @@ export function RollercoasterBabyNamesPage() {
         <section className={styles.snapshotSection} aria-labelledby="product-idea">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="product-idea" className={styles.sectionHeading}>
-              The product idea
+              The value proposition
             </h2>
-          </div>
-          <div className={styles.copyStack} data-reveal>
-            <p className={styles.bodyText}>
-              The design direction connected three things: editorial demand
-              from existing articles, searchable and filterable name data, and
-              a repeatable browsing loop between inspiration and decision-making.
-            </p>
           </div>
           <div className={styles.trioGrid}>
             {productValueItems.map((item, index) => (
@@ -547,6 +488,13 @@ export function RollercoasterBabyNamesPage() {
         </section>
 
         <section className={styles.copySection}>
+          <div className={styles.copyStack} data-reveal>
+            <p className={styles.endNote}>
+              Product and UX strategy/design work completed before handover.
+              Screens are representative recreations used to illustrate the
+              design decisions.
+            </p>
+          </div>
           <div className={styles.closingActions} data-reveal>
             <Link href="/contact" className={styles.contactButton}>
               Start a conversation
