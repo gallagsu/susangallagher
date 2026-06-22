@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getFooterNav, getPrimaryNav } from "@/components/home/home.data";
 import { Footer } from "@/components/home/footer";
@@ -111,6 +112,33 @@ function Placeholder({
   );
 }
 
+function InlineImage({
+  src,
+  alt,
+  width,
+  height,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}) {
+  return (
+    <div className={`${styles.inlineImageFrame} ${className}`.trim()} data-reveal>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={styles.inlineImage}
+        sizes="(max-width: 900px) 100vw, 980px"
+      />
+    </div>
+  );
+}
+
 export function RollercoasterBabyNamesPage() {
   return (
     <div className={styles.pageShell} id="top">
@@ -185,10 +213,21 @@ export function RollercoasterBabyNamesPage() {
           </p>
         </section>
 
-        <Placeholder
-          label="Baby Name Hub homepage showing name search, filters and themed entry points"
-          className={styles.heroPlaceholder}
-        />
+        <figure className={styles.heroFigure} data-reveal>
+          <Image
+            src="/home/projects/rollercoaster-hero.png"
+            alt="Rollercoaster.ie Baby Names overview showing the hub, search results and name detail screens"
+            width={3024}
+            height={2601}
+            loading="eager"
+            className={styles.heroImage}
+            sizes="(max-width: 900px) 100vw, 920px"
+          />
+          <figcaption className={styles.heroCaption}>
+            Fig 1. Representative recreation of the Baby Names product
+            direction across hub, results and detail views.
+          </figcaption>
+        </figure>
 
         <section className={styles.snapshotSection} aria-label="At a glance">
           <div className={styles.snapshotGrid}>
@@ -382,14 +421,32 @@ export function RollercoasterBabyNamesPage() {
             </div>
           </div>
           <div className={styles.decisionImageGallery}>
-            <Placeholder
-              label="Search results page showing filters and scannable name cards"
-              className={styles.galleryPlaceholder}
-            />
-            <Placeholder
-              label="Name detail page showing meaning, pronunciation, origin and related articles"
-              className={styles.galleryPlaceholder}
-            />
+            <figure className={styles.decisionImageFigure}>
+              <InlineImage
+                src="/home/projects/rollercoaster-searchresults.png"
+                alt="Search results page showing filters and scannable name cards"
+                width={3024}
+                height={3332}
+                className={styles.galleryImage}
+              />
+              <figcaption className={styles.decisionImageCaption}>
+                Fig 2. Search results designed for fast scanning and practical
+                narrowing.
+              </figcaption>
+            </figure>
+            <figure className={styles.decisionImageFigure}>
+              <InlineImage
+                src="/home/projects/rollercoaster-namepage.png"
+                alt="Name detail page showing meaning, pronunciation, origin and related articles"
+                width={3024}
+                height={3332}
+                className={styles.galleryImage}
+              />
+              <figcaption className={styles.decisionImageCaption}>
+                Fig 3. Name pages carry the detail while keeping related
+                editorial close by.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
