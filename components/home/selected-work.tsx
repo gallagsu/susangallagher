@@ -161,8 +161,8 @@ export function SelectedWork() {
         </h2>
       </div>
       <p className={styles.selectedWorkIntro} data-reveal>
-        Selected projects that show how I think across product, UX,
-        AI-assisted workflows, commercial strategy and interaction design.
+        Projects that show how I think across product, UX, AI-assisted
+        workflows, commercial strategy and interaction design.
       </p>
       <div className={styles.projectList}>
         {projectItems.map((project, index) => (

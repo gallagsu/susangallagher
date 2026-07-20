@@ -34,22 +34,10 @@ export function Header({ items, brandHref = "#" }: HeaderProps) {
               rx="5"
               className={styles.brandKeyOutline}
             />
-            <rect
-              x="6.5"
-              y="6.5"
-              width="15"
-              height="15"
-              rx="3"
-              className={styles.brandKeyInset}
-            />
-            <text
-              x="14"
-              y="17"
-              textAnchor="middle"
+            <path
+              d="M17.4 10.7c-.7-.8-1.9-1.3-3.4-1.3-2.1 0-3.6 1-3.6 2.6 0 1.3 1 2 3 2.4l1.2.3c1.3.3 1.9.7 1.9 1.6 0 1-.9 1.7-2.5 1.7-1.4 0-2.5-.5-3.3-1.5"
               className={styles.brandKeyLetter}
-            >
-              S
-            </text>
+            />
           </svg>
           <span className={styles.brandName}>SUSAN GALLAGHER</span>
         </Link>
