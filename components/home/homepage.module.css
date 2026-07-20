@@ -177,7 +177,7 @@
   padding: 72px 150px 72px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 56px;
 }
 
 .heroSection {
@@ -185,7 +185,7 @@
 }
 
 .heroContent {
-  max-width: 740px;
+  width: min(100%, 1100px);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -209,7 +209,8 @@
 }
 
 .heroTitle {
-  max-width: 80%;
+  width: 80%;
+  max-width: none;
   font-size: var(--type-display-xl-size);
   font-style: italic;
   font-weight: 500;
@@ -223,7 +224,8 @@
   font-size: var(--type-lead-lg-size);
   font-weight: 500;
   line-height: 1.5;
-  max-width: 70%;
+  width: 70%;
+  max-width: none;
   margin: 0;
 }
 
@@ -235,9 +237,7 @@
 }
 
 .divider {
-  width: 100%;
-  height: 1px;
-  background: var(--color-border-subtle);
+  display: none;
 }
 
 .heroActions {
@@ -245,7 +245,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
-  padding-top: 8px;
+  padding-top: 16px;
 }
 
 .heroPrimaryAction,
@@ -338,7 +338,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 28px;
 }
 
 .sectionHeading {
@@ -386,7 +386,7 @@
 }
 
 .selectedWorkSection {
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .selectedWorkHeader {
@@ -807,7 +807,7 @@
 
 @media (max-width: 900px) {
   .main {
-    gap: 40px;
+    gap: 44px;
     padding: 56px 32px 56px;
   }
 
@@ -821,8 +821,12 @@
   }
 
   .heroTitle {
-    max-width: 80%;
+    width: 80%;
     font-size: 48px;
+  }
+
+  .heroIntro {
+    width: 70%;
   }
 
   .workingPrincipleCard {
@@ -831,23 +835,6 @@
 
   .expertiseGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .projectRow {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .projectViewLinkDesktop {
-    display: none;
-  }
-
-  .projectViewLinkMobile {
-    display: inline-block;
-  }
-
-  .projectSpacer {
-    display: none;
   }
 
   .contactSection {
@@ -886,8 +873,12 @@
   }
 
   .heroTitle {
-    max-width: 80%;
+    width: 100%;
     font-size: 40px;
+  }
+
+  .heroIntro {
+    width: 100%;
   }
 
   .heroIntro,
@@ -972,6 +963,25 @@
   .footerBrand,
   .footerMeta {
     white-space: normal;
+  }
+}
+
+@media (max-width: 760px) {
+  .projectRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .projectViewLinkDesktop {
+    display: none;
+  }
+
+  .projectViewLinkMobile {
+    display: inline-block;
+  }
+
+  .projectSpacer {
+    display: none;
   }
 }
 

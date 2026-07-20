@@ -18,16 +18,16 @@ export function Hero() {
           data-load-reveal
           style={{ "--reveal-delay": "110ms" } as React.CSSProperties}
         >
-          Product and UX designer with a background in development and building
-          digital businesses.
+          I’m a product designer with more than 20 years’ experience across
+          digital products, technology and business.
         </h1>
         <p
           className={styles.heroIntro}
           data-load-reveal
           style={{ "--reveal-delay": "180ms" } as React.CSSProperties}
         >
-          I bring together product strategy, UX, commercial understanding and
-          technical fluency.
+          I bring together product strategy and commercial understanding with
+          founder experience scaling a company to acquisition.
         </p>
         <div
           className={styles.heroActions}
