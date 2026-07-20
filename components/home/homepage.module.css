@@ -80,15 +80,26 @@
   height: 30px;
 }
 
-.brandDot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
+.brandKeyIcon {
+  width: 28px;
+  height: 28px;
   flex: 0 0 auto;
 }
 
-.brandDotCobalt {
-  background: #2453ff;
+.brandKeyOutline,
+.brandKeyLetter {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.brandKeyOutline {
+  stroke-width: 1.5;
+}
+
+.brandKeyLetter {
+  stroke-width: 1.7;
 }
 
 .brandName {
@@ -163,10 +174,10 @@
 .main {
   width: min(100%, var(--page-width));
   margin: 0 auto;
-  padding: 96px 150px 72px;
+  padding: 72px 150px 72px;
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 48px;
 }
 
 .heroSection {
@@ -174,10 +185,10 @@
 }
 
 .heroContent {
-  max-width: 768px;
+  max-width: 740px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 }
 
 .heroTitle,
@@ -187,13 +198,24 @@
   color: var(--color-ink);
 }
 
+.heroEyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--type-ui-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 .heroTitle {
-  max-width: 810px;
+  max-width: 14ch;
   font-size: var(--type-display-xl-size);
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.016em;
-  line-height: 1.2;
+  line-height: 1.12;
+  margin: 0;
 }
 
 .heroIntro {
@@ -201,10 +223,8 @@
   font-size: var(--type-lead-lg-size);
   font-weight: 500;
   line-height: 1.5;
-}
-
-.heroIntro {
-  max-width: 768px;
+  max-width: 38ch;
+  margin: 0;
 }
 
 .selectedWorkIntro {
@@ -218,6 +238,60 @@
   width: 100%;
   height: 1px;
   background: var(--color-border-subtle);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+.heroPrimaryAction,
+.heroSecondaryAction {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 22px;
+  font-family: var(--font-sans);
+  font-size: var(--type-ui-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.heroPrimaryAction {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.heroSecondaryAction {
+  border: 1px solid var(--color-border-strong);
+}
+
+.heroPrimaryAction::after,
+.heroSecondaryAction::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 10px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--motion-duration-fast) ease-out;
+}
+
+.heroPrimaryAction:hover::after,
+.heroPrimaryAction:focus-visible::after,
+.heroSecondaryAction:hover::after,
+.heroSecondaryAction:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .workingPrincipleSection {
@@ -312,7 +386,7 @@
 }
 
 .selectedWorkSection {
-  padding-top: 64px;
+  padding-top: 8px;
 }
 
 .selectedWorkHeader {
@@ -690,6 +764,8 @@
 
 .navLink:focus-visible,
 .ctaButton:focus-visible,
+.heroPrimaryAction:focus-visible,
+.heroSecondaryAction:focus-visible,
 .footerBrand:focus-visible,
 .footerLink:focus-visible,
 .projectViewLink:focus-visible {
@@ -731,8 +807,8 @@
 
 @media (max-width: 900px) {
   .main {
-    gap: 56px;
-    padding: 72px 32px 56px;
+    gap: 40px;
+    padding: 56px 32px 56px;
   }
 
   .headerInner {
@@ -745,6 +821,7 @@
   }
 
   .heroTitle {
+    max-width: 15ch;
     font-size: 48px;
   }
 
@@ -805,10 +882,11 @@
   }
 
   .heroContent {
-    gap: 24px;
+    gap: 20px;
   }
 
   .heroTitle {
+    max-width: 11ch;
     font-size: 40px;
   }
 
@@ -816,6 +894,18 @@
   .selectedWorkIntro,
   .contactCopy {
     font-size: 18px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 4px;
+  }
+
+  .heroPrimaryAction,
+  .heroSecondaryAction {
+    width: 100%;
   }
 
   .sectionHeading,
@@ -897,6 +987,8 @@
   .navLink::after,
   .footerBrand::after,
   .footerLink::after,
+  .heroPrimaryAction::after,
+  .heroSecondaryAction::after,
   .ctaButton::after {
     transition: none;
   }
