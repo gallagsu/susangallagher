@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactCta } from "@/components/home/contact-cta";
 import { ContactForm } from "@/components/site/contact-form";
 import { SiteShell } from "@/components/site/site-shell";
 import styles from "@/components/site/site-pages.module.css";
@@ -25,6 +26,7 @@ export default function ContactPage() {
             Contact
           </h1>
         </div>
+        <ContactCta showButton={false} />
         <p
           className={`${styles.contactIntro} ${styles.contactPageIntro}`}
           data-reveal

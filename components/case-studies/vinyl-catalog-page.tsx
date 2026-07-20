@@ -112,25 +112,6 @@ const prototypeItems = [
   },
 ];
 
-function Placeholder({
-  label,
-  className = "",
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`${styles.placeholder} ${className}`.trim()}
-      role="img"
-      aria-label={label}
-      data-reveal
-    >
-      <span className={styles.placeholderLabel}>{label}</span>
-    </div>
-  );
-}
-
 export function VinylCatalogPage() {
   return (
     <div className={styles.pageShell} id="top">

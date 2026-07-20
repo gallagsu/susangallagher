@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ExpertiseGrid } from "@/components/home/expertise-grid";
+import { WorkingPrinciple } from "@/components/home/working-principle";
 import { SiteShell } from "@/components/site/site-shell";
 import styles from "@/components/site/site-pages.module.css";
 
@@ -44,12 +46,20 @@ export default function AboutPage() {
             Today, I’m focused on product and UX work where clarity,
             judgement, delivery awareness and thoughtful use of AI matter.
           </p>
+        </div>
+        <ExpertiseGrid />
+        <WorkingPrinciple />
+        <div
+          className={styles.pageBody}
+          data-reveal
+          style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
+        >
           <p>I’m open to new roles and collaborations.</p>
         </div>
         <div
           className={styles.pageActions}
           data-reveal
-          style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
+          style={{ "--reveal-delay": "210ms" } as React.CSSProperties}
         >
           <Link href="/contact" className={styles.pageButton}>
             Start a conversation

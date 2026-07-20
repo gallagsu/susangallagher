@@ -2,8 +2,6 @@ import type { ExpertiseItem, NavItem, ProjectItem } from "./home.types";
 
 export type SiteNavKey = "case-study" | "about" | "contact" | null;
 
-const LINKEDIN_HREF = "https://www.linkedin.com/in/susanbgallagher/";
-
 export function getPrimaryNav(activeKey: SiteNavKey = null): NavItem[] {
   return [
     {

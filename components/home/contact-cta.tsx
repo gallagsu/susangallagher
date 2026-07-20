@@ -1,7 +1,11 @@
 import Link from "next/link";
 import styles from "./homepage.module.css";
 
-export function ContactCta() {
+type ContactCtaProps = {
+  showButton?: boolean;
+};
+
+export function ContactCta({ showButton = true }: ContactCtaProps) {
   return (
     <section className={styles.contactSection} aria-label="Contact">
       <div className={styles.contactInner} data-reveal>
@@ -12,9 +16,11 @@ export function ContactCta() {
           If you’re working on a digital product, website or workflow that
           needs clearer direction, I’d be happy to talk.
         </p>
-        <Link href="/contact" className={styles.ctaButton}>
-          START A CONVERSATION
-        </Link>
+        {showButton ? (
+          <Link href="/contact" className={styles.ctaButton}>
+            START A CONVERSATION
+          </Link>
+        ) : null}
       </div>
     </section>
   );

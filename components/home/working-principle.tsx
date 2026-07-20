@@ -8,9 +8,9 @@ export function WorkingPrinciple() {
       data-reveal
     >
       <div className={styles.workingPrincipleCard}>
-        <p id="working-principle-title" className={styles.sectionLabel}>
+        <h2 id="working-principle-title" className={styles.sectionLabel}>
           WORKING PRINCIPLE
-        </p>
+        </h2>
         <p className={styles.workingPrincipleText}>
           My work spans product thinking, UX, commercial judgement and
           hands-on prototyping. I help teams understand complexity, connect the

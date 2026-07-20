@@ -159,7 +159,6 @@ export function SelectedWork() {
         <h2 id="selected-work" className={styles.sectionLabelHeading}>
           SELECTED WORK
         </h2>
-        <p className={styles.yearLabel}>{"//2026"}</p>
       </div>
       <p className={styles.selectedWorkIntro} data-reveal>
         Selected projects that show how I think across product, UX,

@@ -10,7 +10,8 @@ export function Hero() {
           data-load-reveal
           style={{ "--reveal-delay": "90ms" } as React.CSSProperties}
         >
-          Product and UX design shaped by founder experience, commercial judgement and practical use of AI.
+          Product and UX design shaped by founder experience, commercial
+          judgement and practical use of AI.
         </h1>
         <p
           className={styles.heroIntro}

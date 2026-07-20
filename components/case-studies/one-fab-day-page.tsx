@@ -73,25 +73,6 @@ const observedPatterns = [
   },
 ];
 
-function Placeholder({
-  label,
-  className = "",
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`${styles.placeholder} ${className}`.trim()}
-      role="img"
-      aria-label={label}
-      data-reveal
-    >
-      <span className={styles.placeholderLabel}>{label}</span>
-    </div>
-  );
-}
-
 function InlineImage({
   src,
   alt,
