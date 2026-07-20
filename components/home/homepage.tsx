@@ -13,7 +13,6 @@ export function Homepage() {
       <Header items={getPrimaryNav("case-study")} brandHref="/" />
       <main className={styles.main}>
         <Hero />
-        <div className={styles.divider} aria-hidden="true" data-line-reveal />
         <SelectedWork />
       </main>
       <Footer items={getFooterNav()} brandHref="/" />
