@@ -75,14 +75,12 @@ export const expertiseItems: ExpertiseItem[] = [
 
 export const projectItems: ProjectItem[] = [
   {
-    indexLabel: "01 / FOUNDER",
+    indexLabel: "01 /",
     title: "One Fab Day",
     href: "/case-studies/one-fab-day",
-    summary:
-      "Founder-led product and commercial judgement behind an acquired digital business.",
-    description:
-      "A luxury wedding brand and digital platform that grew into a major commercial success and was acquired by a prominent media company.",
-    tags: ["PRODUCT DESIGN", "BRAND BUILDING", "COMMERCIAL UX STRATEGY"],
+    summary: "Founded and grew a digital business to acquisition.",
+    description: "",
+    tags: ["PRODUCT STRATEGY", "UX", "COMMERCIAL GROWTH"],
     image: {
       foregroundSrc: "/home/projects/one-fab-day-home.png?v=2",
       alt: "One Fab Day homepage and wedding imagery",
@@ -90,18 +88,13 @@ export const projectItems: ProjectItem[] = [
     },
   },
   {
-    indexLabel: "02 / PRODUCT DESIGN & STRATEGY",
-    title: "Rollercoaster.ie Baby Names",
+    indexLabel: "02 /",
+    title: "Rollercoaster.ie",
     href: "/case-studies/rollercoaster-baby-names",
     summary:
-      "Turning proven parenting editorial demand into a structured product shaped by content modelling, search data and commercial constraints.",
-    description:
-      "A searchable baby names experience within an existing CMS: connecting editorial traffic, repeat discovery, sponsor value and maintainable content structure.",
-    tags: [
-      "SEARCH & FILTER UX",
-      "CONTENT MODELLING",
-      "COMMERCIAL PRODUCT THINKING",
-    ],
+      "Reframed a high-traffic content feature as a more useful product experience.",
+    description: "",
+    tags: ["PRODUCT STRATEGY", "SEARCH & DISCOVERY", "CONTENT DESIGN"],
     image: {
       foregroundSrc: "/home/projects/rollercoaster-casestudy.png",
       alt: "Rollercoaster.ie Baby Names case study preview image",
@@ -109,14 +102,13 @@ export const projectItems: ProjectItem[] = [
     },
   },
   {
-    indexLabel: "03 / PRODUCT DESIGN & BUILD",
+    indexLabel: "03 /",
     title: "Knights of Éanna",
     href: "/work/knights-of-eanna",
     summary:
-      "AI-assisted product development applied to a complex operational system, with attention to data, permissions, privacy, UI quality and real-world use.",
-    description:
-      "A custom club management system built with AI-assisted workflows, designed to manage complex membership operations - from households and guardians to renewals, consent and admin follow-up.",
-    tags: ["PRIVACY WORKFLOW DESIGN", "AI ADMIN COPILOT"],
+      "Replaced fragmented admin systems with a custom club management system built with AI-assisted workflows.",
+    description: "",
+    tags: ["SERVICE DESIGN", "WORKFLOW DESIGN", "AI-ASSISTED BUILD"],
     image: {
       foregroundSrc: "/home/projects/chess-club-crm.png",
       alt: "Knights of Éanna CRM interface screenshot",
@@ -125,14 +117,13 @@ export const projectItems: ProjectItem[] = [
     },
   },
   {
-    indexLabel: "04 / MOBILE & INTERACTION DESIGN",
+    indexLabel: "04 /",
     title: "Vinyl Catalog App",
     href: "/work/vinyl-catalog",
     summary:
-      "AI product thinking, visual design and prototyping applied to a practical, everyday discovery task.",
-    description:
-      "An AI-assisted mobile product that helps users catalogue their vinyl collection from photos, with a polished browsing experience built around motion, microinteractions and tactile product states.",
-    tags: ["AI-ASSISTED CATALOG", "MOTION UI"],
+      "Designed a clearer way to browse and manage a large personal record collection.",
+    description: "",
+    tags: ["PRODUCT CONCEPT", "INTERACTION DESIGN", "PROTOTYPING"],
     image: {
       foregroundSrc: "/home/projects/vinyl-app-home.png",
       alt: "Vinyl Catalog App homepage project image",

@@ -160,10 +160,6 @@ export function SelectedWork() {
           SELECTED WORK
         </h2>
       </div>
-      <p className={styles.selectedWorkIntro} data-reveal>
-        Projects that show how I think across product, UX, AI-assisted
-        workflows, commercial strategy and interaction design.
-      </p>
       <div className={styles.projectList}>
         {projectItems.map((project, index) => (
           <ProjectRow key={project.title} {...project} index={index} />
