@@ -122,19 +122,31 @@ export function OneFabDayPage() {
             >
               One Fab Day combined high-traffic editorial content with a
               curated supplier platform. I led product and UX decisions that
-              connected those experiences more clearly, strengthened supplier
-              value and improved the workflows needed to maintain quality at
-              scale.
+              strengthened supplier value and improved workflows to maintain
+              quality at scale.
             </p>
           </div>
           <div
-            className={styles.resultsCard}
+            className={styles.resultsPanel}
             data-load-reveal
             style={{ "--reveal-delay": "210ms" } as React.CSSProperties}
           >
-            <p className={styles.resultsCardStat}>3x supplier outbound clicks</p>
-            <p className={styles.resultsCardStat}>&gt;85% partner renewals</p>
-            <p className={styles.resultsCardStat}>~50% faster approval cycle</p>
+            <div className={styles.metricsGrid}>
+              <div className={styles.metricItem}>
+                <p className={styles.metricValue}>3x</p>
+                <p className={styles.metricLabel}>Supplier outbound clicks</p>
+              </div>
+              <div className={styles.metricItem}>
+                <p className={styles.metricValue}>&gt; 85%</p>
+                <p className={styles.metricLabel}>
+                  Partner renewals year-on-year
+                </p>
+              </div>
+              <div className={styles.metricItem}>
+                <p className={styles.metricValue}>~50%</p>
+                <p className={styles.metricLabel}>Faster approval cycle</p>
+              </div>
+            </div>
           </div>
           <dl
             className={styles.metadataGrid}
@@ -151,8 +163,8 @@ export function OneFabDayPage() {
             <div className={`${styles.metadataItem} ${styles.metadataItemFocus}`}>
               <dt className={styles.metadataLabel}>Focus</dt>
               <dd className={styles.metadataValue}>
-                Product strategy, supplier discovery, editorial integration,
-                commercial UX, content workflows
+                Product strategy, UX, content systems, commercial growth and
+                operational workflows
               </dd>
             </div>
             <div className={styles.metadataItem}>
