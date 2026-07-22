@@ -110,7 +110,7 @@ export const projectItems: ProjectItem[] = [
     description: "",
     tags: ["SERVICE DESIGN", "WORKFLOW DESIGN", "AI-ASSISTED BUILD"],
     image: {
-      foregroundSrc: "/home/projects/chess-club-home",
+      foregroundSrc: "/home/projects/chess-club-home.png",
       alt: "Knights of Éanna CRM interface screenshot",
       frameStyle: "graph-paper",
       aspectRatio: "3 / 2",
