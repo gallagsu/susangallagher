@@ -97,7 +97,7 @@ export function OneFabDayPage() {
               data-load-reveal
               style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
             >
-              Turning a trusted digital media platform into a strong
+              Turning a trusted digital media platform into a stronger
               commercial product
             </h1>
             <figure className={styles.heroFigure} data-reveal>
@@ -152,14 +152,13 @@ export function OneFabDayPage() {
             <div className={styles.metadataItem}>
               <dt className={styles.metadataLabel}>Role</dt>
               <dd className={styles.metadataValue}>
-                <span>Co-founder</span>
-                <span>Product Design &amp; UX Lead</span>
+                Co-founder — Product direction and UX leadership
               </dd>
             </div>
             <div className={`${styles.metadataItem} ${styles.metadataItemFocus}`}>
               <dt className={styles.metadataLabel}>Focus</dt>
               <dd className={styles.metadataValue}>
-                Product strategy, UX, content systems, commercial growth and
+                Product strategy, UX, content systems, commercial value and
                 operational workflows
               </dd>
             </div>
@@ -176,7 +175,7 @@ export function OneFabDayPage() {
           <div className={styles.copyGrid}>
             <div className={styles.copyStack} data-reveal>
               <h2 id="product-tension" className={styles.sectionHeading}>
-                The Core Challenge
+                The challenge
               </h2>
               <p className={styles.bodyText}>
                 One Fab Day combined high-traffic wedding editorial with a
@@ -196,9 +195,9 @@ export function OneFabDayPage() {
               style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
             >
               <p className={styles.pullQuoteText}>
-                Editorial built trust. The directory created commercial value.
-                The challenge was connecting them without making the experience
-                feel transactional.
+                The opportunity was to connect inspiration and supplier
+                discovery, while protecting the editorial trust that made One
+                Fab Day valuable.
               </p>
             </blockquote>
           </div>
@@ -207,7 +206,7 @@ export function OneFabDayPage() {
         <section className={styles.snapshotSection} aria-labelledby="observed-patterns">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="observed-patterns" className={styles.sectionHeading}>
-              Observed Patterns
+              What informed the work
             </h2>
           </div>
           <div className={styles.copyStack} data-reveal>
@@ -299,10 +298,11 @@ export function OneFabDayPage() {
           </div>
           <div className={styles.copyStack} data-reveal>
             <p className={styles.bodyText}>
-              The work strengthened the connection between audience intent and
-              commercial value. It made supplier discovery more visible and
-              useful for couples, gave partners clearer attributable value, and
-              created faster internal workflows for maintaining the product.
+              The work showed how editorial trust, product design and
+              commercial value could reinforce each other. By improving both
+              the customer experience and the systems behind it, we created
+              clearer supplier value without weakening the editorial experience
+              that made the platform successful.
             </p>
           </div>
         </section>
