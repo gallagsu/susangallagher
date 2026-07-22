@@ -11,13 +11,13 @@ const playProjects = [
     imageAlt: "Vinyl Catalog App project image",
   },
   {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "...",
   },
   {
-    title: "Lorem ipsum sed do eiusmod tempor incididunt ut labore.",
+    title: "...",
   },
   {
-    title: "Lorem ipsum ut enim ad minim veniam quis nostrud.",
+    title: "...",
   },
 ];
 
@@ -32,11 +32,12 @@ export default function PlayPage() {
     <SiteShell activeNav="play">
       <section className={styles.pageSection} aria-labelledby="play-title">
         <div className={styles.pageHeader}>
-          <h1 id="play-title" className={styles.pageTitle} data-load-reveal>
-            Play
-          </h1>
-          <p className={styles.pageIntro} data-reveal>
-            Personal projects and explorations
+          <p
+            id="play-title"
+            className={styles.pageIntro}
+            data-load-reveal
+          >
+            Personal projects and explorations.
           </p>
         </div>
         <div className={styles.playGrid}>
