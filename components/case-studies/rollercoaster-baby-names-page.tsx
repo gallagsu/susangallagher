@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { getFooterNav, getPrimaryNav } from "@/components/home/home.data";
 import { Footer } from "@/components/home/footer";
 import { Header } from "@/components/home/header";
@@ -72,9 +71,9 @@ const decisions = [
 ];
 
 const proofItems = [
-  "Turned proven content demand into a structured product concept.",
-  "Designed the schema, search and filter experience, and editorial linking loop.",
-  "Connected user discovery, CMS maintainability and commercial opportunity.",
+  "Structured the content model, search and filter experience.",
+  "Connected editorial content with deeper product journeys.",
+  "Designed around CMS maintainability and phased delivery.",
 ];
 
 export function RollercoasterBabyNamesPage() {
@@ -234,19 +233,18 @@ export function RollercoasterBabyNamesPage() {
 
         <div className={styles.divider} aria-hidden="true" data-line-reveal />
 
-        <section className={styles.resultsSection}>
+        <section className={styles.resultsSection} aria-labelledby="outcome">
+          <div className={styles.sectionHeader} data-reveal>
+            <h2 id="outcome" className={styles.sectionHeading}>
+              Outcome
+            </h2>
+          </div>
           <div className={styles.copyStack} data-reveal>
             <p className={styles.bodyText}>
-              This project shows how I think about product design in
-              content-led businesses: not just as page layouts, but as systems
-              of user intent, structured data, editorial workflow, search
-              behaviour and commercial value.
-            </p>
-            <p className={styles.bodyText}>
-              It also shows my ability to work within practical constraints:
-              using an existing CMS, designing around editorial maintainability,
-              reducing engineering overhead and shaping a product that could
-              grow in phases.
+              The concept turned proven content demand into a structured
+              product model for search, filtering and discovery. It connected
+              user needs with a maintainable CMS structure, stronger editorial
+              pathways and a clearer commercial opportunity.
             </p>
           </div>
           <div className={styles.resultsPanel} data-reveal>
@@ -264,22 +262,6 @@ export function RollercoasterBabyNamesPage() {
               completed before handover. Screens are representative recreations
               used to illustrate the thinking and proposed experience.
             </p>
-          </div>
-        </section>
-
-        <section className={styles.copySection}>
-          <div className={styles.copyStack} data-reveal>
-            <p className={styles.endNote}>
-              This case study focuses on product and UX strategy/design work
-              completed before handover to engineering. Screens are
-              representative recreations used to illustrate the thinking and
-              proposed experience.
-            </p>
-          </div>
-          <div className={styles.closingActions} data-reveal>
-            <Link href="/#selected-work" className={styles.contactButton}>
-              My work
-            </Link>
           </div>
         </section>
       </main>
