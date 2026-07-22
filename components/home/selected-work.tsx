@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { projectItems } from "./home.data";
+import { homeProjectItems } from "./home.data";
 import type { ProjectItem } from "./home.types";
 import styles from "./homepage.module.css";
 
@@ -66,39 +66,23 @@ function ProjectRow({
     />
   );
 
-  const viewProjectLabel = href
-    ? "[view project]"
-    : "[CASE STUDY COMING SOON]";
-
   const desktopViewProject = href ? (
     <Link
       href={href}
       className={`${styles.projectViewLink} ${styles.projectViewLinkDesktop}`}
     >
-      {viewProjectLabel}
+      [view project]
     </Link>
-  ) : (
-    <span
-      className={`${styles.projectViewLink} ${styles.projectViewLinkDesktop}`}
-    >
-      {viewProjectLabel}
-    </span>
-  );
+  ) : null;
 
   const mobileViewProject = href ? (
     <Link
       href={href}
       className={`${styles.projectViewLink} ${styles.projectViewLinkMobile}`}
     >
-      {viewProjectLabel}
+      [view project]
     </Link>
-  ) : (
-    <span
-      className={`${styles.projectViewLink} ${styles.projectViewLinkMobile}`}
-    >
-      {viewProjectLabel}
-    </span>
-  );
+  ) : null;
 
   return (
     <article
@@ -149,22 +133,51 @@ function ProjectRow({
   );
 }
 
-export function SelectedWork() {
+type ProjectCollectionProps = {
+  heading?: string;
+  headingId?: string;
+  labelledById?: string;
+  items: ProjectItem[];
+  headingTag?: "h1" | "h2";
+};
+
+export function ProjectCollection({
+  heading,
+  headingId,
+  labelledById,
+  items,
+  headingTag = "h2",
+}: ProjectCollectionProps) {
+  const HeadingTag = headingTag;
+  const sectionLabelledBy = heading ? headingId : labelledById;
+
   return (
     <section
       className={styles.selectedWorkSection}
-      aria-labelledby="selected-work"
+      aria-labelledby={sectionLabelledBy}
     >
-      <div className={styles.selectedWorkHeader} data-reveal>
-        <h2 id="selected-work" className={styles.sectionLabelHeading}>
-          SELECTED WORK
-        </h2>
-      </div>
+      {heading && headingId ? (
+        <div className={styles.selectedWorkHeader} data-reveal>
+          <HeadingTag id={headingId} className={styles.sectionLabelHeading}>
+            {heading}
+          </HeadingTag>
+        </div>
+      ) : null}
       <div className={styles.projectList}>
-        {projectItems.map((project, index) => (
+        {items.map((project, index) => (
           <ProjectRow key={project.title} {...project} index={index} />
         ))}
       </div>
     </section>
+  );
+}
+
+export function SelectedWork() {
+  return (
+    <ProjectCollection
+      heading="SELECTED WORK"
+      headingId="selected-work"
+      items={homeProjectItems}
+    />
   );
 }

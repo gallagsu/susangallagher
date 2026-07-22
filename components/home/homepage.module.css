@@ -110,6 +110,14 @@
   line-height: 1;
 }
 
+.menuToggle {
+  display: none;
+}
+
+.navPanel {
+  display: flex;
+}
+
 .navList,
 .footerNav,
 .tagList {
@@ -136,6 +144,70 @@
 
 .navLink {
   padding-bottom: 2px;
+}
+
+.menuToggle {
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-sans);
+  font-size: var(--type-ui-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 0;
+}
+
+.menuToggleLabel {
+  display: inline-block;
+}
+
+.menuToggleIcon {
+  position: relative;
+  width: 20px;
+  height: 14px;
+  display: inline-flex;
+}
+
+.menuToggleBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition:
+    transform var(--motion-duration-fast) ease-out,
+    opacity var(--motion-duration-fast) ease-out,
+    top var(--motion-duration-fast) ease-out;
+}
+
+.menuToggleBar:nth-child(1) {
+  top: 0;
+}
+
+.menuToggleBar:nth-child(2) {
+  top: 6px;
+}
+
+.menuToggleBar:nth-child(3) {
+  top: 12px;
+}
+
+.menuToggleBarTopOpen {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.menuToggleBarMiddleOpen {
+  opacity: 0;
+}
+
+.menuToggleBarBottomOpen {
+  top: 6px;
+  transform: rotate(-45deg);
 }
 
 .navLink::after,
@@ -760,6 +832,7 @@
 }
 
 .navLink:focus-visible,
+.menuToggle:focus-visible,
 .ctaButton:focus-visible,
 .heroPrimaryAction:focus-visible,
 .heroSecondaryAction:focus-visible,
@@ -852,13 +925,40 @@
   }
 
   .headerInner {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
     padding-left: 20px;
     padding-right: 20px;
+    gap: 0;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  .navPanel {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: calc(100% + 16px);
+    display: none;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    padding: 20px;
+    z-index: 10;
+  }
+
+  .navPanelOpen {
+    display: block;
   }
 
   .navList {
-    gap: 20px;
-    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 
   .main {
@@ -994,6 +1094,7 @@
   .navLink::after,
   .footerBrand::after,
   .footerLink::after,
+  .menuToggleBar,
   .heroPrimaryAction::after,
   .heroSecondaryAction::after,
   .ctaButton::after {

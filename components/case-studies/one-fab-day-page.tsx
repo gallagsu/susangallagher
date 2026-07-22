@@ -264,7 +264,7 @@ export function OneFabDayPage() {
         <section className={styles.resultsSection} aria-labelledby="results">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="results" className={styles.sectionHeading}>
-              Impact &amp; Reflection
+              Impact
             </h2>
           </div>
           <div className={styles.decisionImageGallery}>

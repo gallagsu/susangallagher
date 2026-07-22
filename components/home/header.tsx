@@ -1,3 +1,6 @@
+"use client";
+
+import { useId, useState } from "react";
 import Link from "next/link";
 import type { NavItem } from "./home.types";
 import styles from "./homepage.module.css";
@@ -8,6 +11,9 @@ type HeaderProps = {
 };
 
 export function Header({ items, brandHref = "#" }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuId = useId();
+
   return (
     <header className={styles.header}>
       <div
@@ -41,7 +47,38 @@ export function Header({ items, brandHref = "#" }: HeaderProps) {
           </svg>
           <span className={styles.brandName}>SUSAN GALLAGHER</span>
         </Link>
-        <nav aria-label="Primary">
+        <button
+          type="button"
+          className={styles.menuToggle}
+          aria-expanded={isMenuOpen}
+          aria-controls={menuId}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span className={styles.menuToggleLabel}>Menu</span>
+          <span className={styles.menuToggleIcon} aria-hidden="true">
+            <span
+              className={`${styles.menuToggleBar} ${
+                isMenuOpen ? styles.menuToggleBarTopOpen : ""
+              }`}
+            />
+            <span
+              className={`${styles.menuToggleBar} ${
+                isMenuOpen ? styles.menuToggleBarMiddleOpen : ""
+              }`}
+            />
+            <span
+              className={`${styles.menuToggleBar} ${
+                isMenuOpen ? styles.menuToggleBarBottomOpen : ""
+              }`}
+            />
+          </span>
+        </button>
+        <nav
+          id={menuId}
+          aria-label="Primary"
+          className={`${styles.navPanel} ${isMenuOpen ? styles.navPanelOpen : ""}`}
+        >
           <ul className={styles.navList}>
             {items.map((item) => (
               <li key={item.label}>
@@ -52,6 +89,7 @@ export function Header({ items, brandHref = "#" }: HeaderProps) {
                     aria-current={item.active ? "page" : undefined}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </a>
@@ -60,6 +98,7 @@ export function Header({ items, brandHref = "#" }: HeaderProps) {
                     href={item.href}
                     className={`${styles.navLink} ${item.active ? styles.navLinkActive : ""}`}
                     aria-current={item.active ? "page" : undefined}
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </Link>

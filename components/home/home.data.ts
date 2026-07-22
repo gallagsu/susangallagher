@@ -1,6 +1,6 @@
 import type { ExpertiseItem, NavItem, ProjectItem } from "./home.types";
 
-export type SiteNavKey = "case-study" | "about" | "contact" | null;
+export type SiteNavKey = "case-study" | "play" | "about" | "contact" | null;
 
 export function getPrimaryNav(activeKey: SiteNavKey = null): NavItem[] {
   return [
@@ -8,6 +8,11 @@ export function getPrimaryNav(activeKey: SiteNavKey = null): NavItem[] {
       label: "WORK",
       href: "/#selected-work",
       active: activeKey === "case-study",
+    },
+    {
+      label: "PLAY",
+      href: "/play",
+      active: activeKey === "play",
     },
     {
       label: "ABOUT",
@@ -28,6 +33,11 @@ export function getFooterNav(activeKey: SiteNavKey = null): NavItem[] {
       label: "WORK",
       href: "/#selected-work",
       active: activeKey === "case-study",
+    },
+    {
+      label: "PLAY",
+      href: "/play",
+      active: activeKey === "play",
     },
     {
       label: "ABOUT",
@@ -73,7 +83,7 @@ export const expertiseItems: ExpertiseItem[] = [
   },
 ];
 
-export const projectItems: ProjectItem[] = [
+export const homeProjectItems: ProjectItem[] = [
   {
     indexLabel: "01 /",
     title: "One Fab Day",
@@ -92,7 +102,7 @@ export const projectItems: ProjectItem[] = [
     title: "Rollercoaster.ie",
     href: "/case-studies/rollercoaster-baby-names",
     summary:
-      "Reframed a high-traffic content feature as a more useful product experience.",
+      "Turned a high-traffic baby-name archive into a clearer search and discovery concept.",
     description: "",
     tags: ["PRODUCT STRATEGY", "SEARCH & DISCOVERY", "CONTENT DESIGN"],
     image: {
@@ -116,10 +126,12 @@ export const projectItems: ProjectItem[] = [
       aspectRatio: "3 / 2",
     },
   },
+];
+
+export const playProjectItems: ProjectItem[] = [
   {
-    indexLabel: "04 /",
+    indexLabel: "01 /",
     title: "Vinyl Catalog App",
-    href: "/work/vinyl-catalog",
     summary:
       "Designed a clearer way to browse and manage a large personal record collection.",
     description: "",
