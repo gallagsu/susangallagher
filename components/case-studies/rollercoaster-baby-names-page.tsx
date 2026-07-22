@@ -256,8 +256,11 @@ export function RollercoasterBabyNamesPage() {
               ))}
             </ul>
           </div>
-          <div className={styles.copyStack} data-reveal>
-            <p className={styles.bodyText}>
+          <div
+            className={`${styles.copyStack} ${styles.resultsNoteWrap}`}
+            data-reveal
+          >
+            <p className={styles.endNote}>
               This case study focuses on product and UX strategy/design work
               completed before handover. Screens are representative recreations
               used to illustrate the thinking and proposed experience.

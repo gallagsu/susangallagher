@@ -198,6 +198,10 @@
   color: color-mix(in srgb, var(--color-ink) 72%, transparent);
 }
 
+.resultsNoteWrap {
+  padding-top: 20px;
+}
+
 .heroFigure {
   width: 100%;
   max-width: 600px;
