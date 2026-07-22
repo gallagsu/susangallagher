@@ -129,16 +129,9 @@ export function RollercoasterBabyNamesPage() {
               style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
             >
               I turned a large content archive into a more useful product for
-              browsing, filtering and comparing names.
-            </p>
-            <p
-              className={styles.heroSummary}
-              data-load-reveal
-              style={{ "--reveal-delay": "210ms" } as React.CSSProperties}
-            >
-              Rollercoaster.ie already had strong-performing baby name
-              editorial. The opportunity was to turn that demand into a structured product experience: something users could search, filter, compare and
-              return to over time, while creating a clearer sponsor-ready surface for a valuable early-parenting audience.
+              browsing, filtering and comparing names, while creating a
+              clearer sponsor-ready surface for a valuable early-parenting
+              audience.
             </p>
           </div>
           <div
@@ -146,11 +139,22 @@ export function RollercoasterBabyNamesPage() {
             data-load-reveal
             style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
           >
-            <p className={styles.panelTitle}>Award-winning wider redesign</p>
-            <p className={styles.panelText}>
-              Rollercoaster.ie was named Media Brand of the Year following the
-              wider rebrand and redesign
-            </p>
+            <div className={styles.panelMedia}>
+              <Image
+                src="/home/projects/MEDIA-AWARDS_Site_Icon.png"
+                alt=""
+                width={72}
+                height={72}
+                className={styles.panelIcon}
+              />
+              <div className={styles.panelCopy}>
+                <p className={styles.panelTitle}>Award-winning wider redesign</p>
+                <p className={styles.panelText}>
+                  Rollercoaster.ie was named Media Brand of the Year following
+                  the wider rebrand and redesign
+                </p>
+              </div>
+            </div>
           </div>
           <dl
             className={styles.metadataGrid}

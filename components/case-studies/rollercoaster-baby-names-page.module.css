@@ -374,6 +374,22 @@
 .resultsPanel {
   background: var(--color-panel);
   padding: 32px 28px;
+}
+
+.panelMedia {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.panelIcon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.panelCopy {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -487,5 +503,20 @@
 
   .heroPlaceholder {
     min-height: 300px;
+  }
+
+  .panelMedia {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .panelMedia {
+    flex-direction: column;
+  }
+
+  .panelIcon {
+    width: 64px;
+    height: 64px;
   }
 }
