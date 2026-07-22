@@ -112,21 +112,34 @@ export function OneFabDayPage() {
               data-load-reveal
               style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
             >
-              One Fab Day: Turning editorial trust into supplier action
+              Turning a trusted digital media platform into a strong
+              commercial product
             </h1>
             <p
               className={styles.heroSubtitle}
               data-load-reveal
               style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
             >
-              A case study in connecting editorial
-              trust to curated supplier discovery, while protecting brand trust and improving commercial outcomes.
+              One Fab Day combined high-traffic editorial content with a
+              curated supplier platform. I led product and UX decisions that
+              connected those experiences more clearly, strengthened supplier
+              value and improved the workflows needed to maintain quality at
+              scale.
             </p>
+          </div>
+          <div
+            className={styles.resultsCard}
+            data-load-reveal
+            style={{ "--reveal-delay": "210ms" } as React.CSSProperties}
+          >
+            <p className={styles.resultsCardStat}>3x supplier outbound clicks</p>
+            <p className={styles.resultsCardStat}>&gt;85% partner renewals</p>
+            <p className={styles.resultsCardStat}>~50% faster approval cycle</p>
           </div>
           <dl
             className={styles.metadataGrid}
             data-load-reveal
-            style={{ "--reveal-delay": "210ms" } as React.CSSProperties}
+            style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
           >
             <div className={styles.metadataItem}>
               <dt className={styles.metadataLabel}>Role</dt>
@@ -135,7 +148,7 @@ export function OneFabDayPage() {
                 <span>Product Design &amp; UX Lead</span>
               </dd>
             </div>
-            <div className={styles.metadataItem}>
+            <div className={`${styles.metadataItem} ${styles.metadataItemFocus}`}>
               <dt className={styles.metadataLabel}>Focus</dt>
               <dd className={styles.metadataValue}>
                 Product strategy, supplier discovery, editorial integration,
@@ -143,11 +156,9 @@ export function OneFabDayPage() {
               </dd>
             </div>
             <div className={styles.metadataItem}>
-              <dt className={styles.metadataLabel}>Results</dt>
+              <dt className={styles.metadataLabel}>Outcome</dt>
               <dd className={styles.metadataValue}>
-                <span>3x supplier outbound clicks</span>
-                <span>&gt;85% partner renewals</span>
-                <span>~50% faster approval cycle</span>
+                One Fab Day was acquired by DMG Media.
               </dd>
             </div>
           </dl>

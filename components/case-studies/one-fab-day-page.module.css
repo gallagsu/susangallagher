@@ -142,11 +142,27 @@
   max-width: 880px;
 }
 
+.resultsCard {
+  width: min(100%, 560px);
+  background: var(--color-panel);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resultsCardStat {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--type-lead-size);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
 .metadataGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr) minmax(0, 0.9fr);
   gap: 24px;
-  padding-top: 8px;
 }
 
 .metadataItem {
@@ -161,6 +177,10 @@
   font-size: var(--type-lead-size);
   display: flex;
   flex-direction: column;
+}
+
+.metadataItemFocus {
+  grid-column: 2;
 }
 
 .sectionHeader {
@@ -525,12 +545,20 @@
     padding: 72px 32px 56px;
   }
 
+  .resultsCard {
+    width: 100%;
+  }
+
   .metadataGrid,
   .snapshotGrid,
   .metricsGrid,
   .copyGrid,
   .evidenceGrid {
     grid-template-columns: 1fr;
+  }
+
+  .metadataItemFocus {
+    grid-column: auto;
   }
 
   .decisionColumns {
