@@ -70,6 +70,20 @@
   padding-top: 8px;
 }
 
+.contactFormSection {
+  width: min(100%, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactFormIntro {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .aboutSection {
   width: 100%;
   display: flex;

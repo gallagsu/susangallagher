@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ContactCta } from "@/components/home/contact-cta";
 import { ContactForm } from "@/components/site/contact-form";
 import { SiteShell } from "@/components/site/site-shell";
 import styles from "@/components/site/site-pages.module.css";
@@ -13,32 +12,39 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <SiteShell activeNav="contact">
-      <section
-        className={`${styles.pageSection} ${styles.contactPageSection}`}
-        aria-labelledby="contact-title"
-      >
-        <div className={`${styles.pageHeader} ${styles.contactPageHeader}`}>
+      <section className={styles.pageSection} aria-labelledby="contact-title">
+        <div className={styles.pageHeader}>
           <h1
             id="contact-title"
-            className={`${styles.pageTitle} ${styles.contactPageTitle}`}
+            className={styles.pageTitle}
             data-load-reveal
           >
             Contact
           </h1>
         </div>
-        <ContactCta showButton={false} />
-        <p
-          className={`${styles.contactIntro} ${styles.contactPageIntro}`}
+        <div
+          className={styles.pageBody}
           data-reveal
           style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
         >
-          For product design, UX, strategy or AI-assisted build work, please
-          send a note and I’ll come back to you directly.
-        </p>
+          <p>
+            I&apos;m interested in product and UX roles where I can contribute
+            strategic, commercial and technical perspective within a
+            collaborative team.
+          </p>
+          <p>
+            I&apos;m also happy to hear about relevant projects, introductions
+            or conversations about product work.
+          </p>
+        </div>
         <div
+          className={styles.contactFormSection}
           data-reveal
           style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
         >
+          <p className={styles.contactFormIntro}>
+            Send me a note and I&apos;ll get back to you directly.
+          </p>
           <ContactForm />
         </div>
       </section>

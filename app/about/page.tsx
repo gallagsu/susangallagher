@@ -76,15 +76,6 @@ const skillGroups = [
   },
 ];
 
-type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-};
-
-// Add testimonial entries here when approved for publication.
-const testimonials: Testimonial[] = [];
-
 export const metadata: Metadata = {
   title: "About | Susan Gallagher",
   description:
@@ -225,52 +216,11 @@ export default function AboutPage() {
           <blockquote className={styles.aboutPullQuote} data-reveal>
             <p className={styles.aboutPullQuoteText}>
               I start by understanding the real problem: what users need, what
-              the organisation is trying to achieve and what the team can
-              realistically deliver. I then work across product direction, UX
-              and workflows to turn that complexity into clear decisions and
-              practical next steps.
+              the organisation is trying to achieve and what is realistic to
+              deliver. From there, I use product thinking and UX to shape
+              clear, practical next steps.
             </p>
           </blockquote>
-        </section>
-
-        <section
-          className={styles.aboutSection}
-          aria-labelledby="what-people-say"
-        >
-          <div className={styles.pageHeader}>
-            <h2
-              id="what-people-say"
-              className={styles.aboutSectionHeading}
-              data-reveal
-            >
-              What people say
-            </h2>
-          </div>
-          {testimonials.length > 0 ? (
-            <div className={styles.aboutTestimonialGrid}>
-              {testimonials.map((item, index) => (
-                <article
-                  key={`${item.name}-${item.role}`}
-                  className={styles.aboutTestimonial}
-                  data-reveal
-                  style={
-                    { "--reveal-delay": `${index * 60}ms` } as React.CSSProperties
-                  }
-                >
-                  <p className={styles.aboutTestimonialQuote}>{item.quote}</p>
-                  <p className={styles.aboutTestimonialMeta}>
-                    {item.name}
-                    <br />
-                    {item.role}
-                  </p>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <p className={styles.aboutSubtleNote} data-reveal>
-              Testimonials will be added here.
-            </p>
-          )}
         </section>
 
         <div
