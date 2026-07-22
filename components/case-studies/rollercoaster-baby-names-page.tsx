@@ -8,11 +8,11 @@ import styles from "./rollercoaster-baby-names-page.module.css";
 const metadataItems = [
   {
     label: "Role",
-    value: "Product & UX Design / Head of UX",
+    value: "Head of UX — product direction and UX design",
   },
   {
     label: "Business goal",
-    value: "Increase repeat visits, page depth and sponsor value",
+    value: "Increase repeat visits, deeper browsing and sponsor value",
   },
   {
     label: "Constraints",
@@ -71,9 +71,9 @@ const decisions = [
 ];
 
 const proofItems = [
-  "Structured the content model, search and filter experience.",
+  "Defined a scalable content model and discovery experience.",
   "Connected editorial content with deeper product journeys.",
-  "Designed around CMS maintainability and phased delivery.",
+  "Designed for CMS maintainability and phased delivery.",
 ];
 
 export function RollercoasterBabyNamesPage() {
@@ -217,7 +217,6 @@ export function RollercoasterBabyNamesPage() {
                   <div className={styles.decisionColumns}>
                     <h2 className={styles.decisionTitle}>{decision.title}</h2>
                     <div className={styles.copyStack}>
-                      <p className={styles.judgementLabel}>Description</p>
                       <p className={styles.bodyText}>{decision.description}</p>
                     </div>
                     <div className={styles.judgementBlock}>
@@ -255,6 +254,35 @@ export function RollercoasterBabyNamesPage() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className={styles.decisionImageGallery}>
+            <div
+              className={`${styles.inlineImageFrame} ${styles.galleryImage}`}
+              data-reveal
+            >
+              <Image
+                src="/home/projects/rollercoaster-searchresults.png"
+                alt="Search results page showing filters and scannable name cards"
+                width={3024}
+                height={3332}
+                className={styles.inlineImage}
+                sizes="(max-width: 900px) 100vw, 980px"
+              />
+            </div>
+            <div
+              className={`${styles.inlineImageFrame} ${styles.galleryImage}`}
+              data-reveal
+              style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
+            >
+              <Image
+                src="/home/projects/rollercoaster-namepage.png"
+                alt="Name detail page showing meaning, pronunciation, origin and related articles"
+                width={3024}
+                height={3332}
+                className={styles.inlineImage}
+                sizes="(max-width: 900px) 100vw, 980px"
+              />
+            </div>
           </div>
           <div
             className={`${styles.copyStack} ${styles.resultsNoteWrap}`}
