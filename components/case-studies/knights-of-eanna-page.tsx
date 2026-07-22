@@ -139,29 +139,16 @@ export function KnightsOfEannaPage() {
               system
             </h1>
             <figure className={styles.heroFigure} data-reveal>
-              <div className={styles.heroImageGrid}>
-                <div className={styles.heroImageFrame}>
-                  <Image
-                    src="/home/projects/chess-club-website.png"
-                    alt="Knights of Éanna public website screenshot"
-                    width={1512}
-                    height={1110}
-                    loading="eager"
-                    className={styles.heroImage}
-                    sizes="(max-width: 900px) 100vw, 700px"
-                  />
-                </div>
-                <div className={styles.heroImageFrame}>
-                  <Image
-                    src="/home/projects/chess-club-join.png"
-                    alt="Knights of Éanna online membership flow screenshot"
-                    width={1512}
-                    height={1110}
-                    loading="eager"
-                    className={styles.heroImage}
-                    sizes="(max-width: 900px) 100vw, 700px"
-                  />
-                </div>
+              <div className={styles.heroImageFrame}>
+                <Image
+                  src="/home/projects/chess-club-home.png"
+                  alt="Knights of Éanna public website and membership journey screenshot"
+                  width={1512}
+                  height={1110}
+                  loading="eager"
+                  className={styles.heroImage}
+                  sizes="(max-width: 900px) 100vw, 960px"
+                />
               </div>
             </figure>
             <p
@@ -275,6 +262,19 @@ export function KnightsOfEannaPage() {
               What I built
             </h2>
           </div>
+          <div className={styles.copyStack} data-reveal>
+            <p className={styles.bodyText}>
+              I used AI-assisted development to speed up implementation,
+              explore workflows and work through technical problems. The
+              product, UX, data structure, privacy and operational decisions
+              remained mine.
+            </p>
+            <p className={styles.bodyText}>
+              I also avoided fully automating payment-related or sensitive
+              administrative actions. AI-supported workflows stayed constrained
+              and reviewable.
+            </p>
+          </div>
           <div className={styles.builtGrid}>
             {builtItems.map((item, index) => (
               <article
@@ -301,28 +301,6 @@ export function KnightsOfEannaPage() {
                 </div>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section
-          className={styles.copySection}
-          aria-labelledby="ai-assisted-development"
-        >
-          <div className={styles.copyStack} data-reveal>
-            <h2 id="ai-assisted-development" className={styles.sectionHeading}>
-              AI-assisted development
-            </h2>
-            <p className={styles.bodyText}>
-              I used AI-assisted development to speed up implementation,
-              explore workflows and work through technical problems. The
-              product, UX, data structure, privacy and operational decisions
-              remained mine.
-            </p>
-            <p className={styles.bodyText}>
-              I also avoided fully automating payment-related or sensitive
-              administrative actions. AI-supported workflows stayed constrained
-              and reviewable.
-            </p>
           </div>
         </section>
 

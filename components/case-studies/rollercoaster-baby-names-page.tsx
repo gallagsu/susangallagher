@@ -238,23 +238,6 @@ export function RollercoasterBabyNamesPage() {
               Outcome
             </h2>
           </div>
-          <div className={styles.copyStack} data-reveal>
-            <p className={styles.bodyText}>
-              The concept turned proven content demand into a structured
-              product model for search, filtering and discovery. It connected
-              user needs with a maintainable CMS structure, stronger editorial
-              pathways and a clearer commercial opportunity.
-            </p>
-          </div>
-          <div className={styles.resultsPanel} data-reveal>
-            <ul className={styles.proofList}>
-              {proofItems.map((item) => (
-                <li key={item} className={styles.proofListItem}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
           <div className={styles.decisionImageGallery}>
             <div
               className={`${styles.inlineImageFrame} ${styles.galleryImage}`}
@@ -283,6 +266,23 @@ export function RollercoasterBabyNamesPage() {
                 sizes="(max-width: 900px) 100vw, 980px"
               />
             </div>
+          </div>
+          <div className={styles.copyStack} data-reveal>
+            <p className={styles.bodyText}>
+              The concept turned proven content demand into a structured
+              product model for search, filtering and discovery. It connected
+              user needs with a maintainable CMS structure, stronger editorial
+              pathways and a clearer commercial opportunity.
+            </p>
+          </div>
+          <div className={styles.resultsPanel} data-reveal>
+            <ul className={styles.proofList}>
+              {proofItems.map((item) => (
+                <li key={item} className={styles.proofListItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
           <div
             className={`${styles.copyStack} ${styles.resultsNoteWrap}`}

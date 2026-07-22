@@ -1,14 +1,94 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExpertiseGrid } from "@/components/home/expertise-grid";
-import { WorkingPrinciple } from "@/components/home/working-principle";
 import { SiteShell } from "@/components/site/site-shell";
 import styles from "@/components/site/site-pages.module.css";
+
+const proofItems = [
+  {
+    title: "Software development",
+    body: "Started my career as a developer at IBM, giving me a practical understanding of technology and delivery.",
+  },
+  {
+    title: "Business building",
+    body: "Co-founded and scaled One Fab Day to a team of 12, multiple revenue streams and acquisition by DMG Media.",
+  },
+  {
+    title: "UX leadership",
+    body: "Led UX work across established consumer media brands, connecting audience needs, editorial priorities and commercial goals.",
+  },
+];
+
+const bringItems = [
+  {
+    title: "Product strategy and direction",
+    body: "I clarify the underlying problem, weigh user and business needs, and help teams decide what to prioritise. At One Fab Day, this meant connecting trusted editorial content with a stronger supplier product and commercial model.",
+  },
+  {
+    title: "Commercial understanding",
+    body: "I understand how product decisions affect growth, revenue and operations. I co-founded and scaled a digital media business through to acquisition.",
+  },
+  {
+    title: "Technical fluency",
+    body: "I began my career in software development and can work constructively with engineering, understand delivery constraints and prototype ideas using modern development and AI tools.",
+  },
+  {
+    title: "Service and workflow design",
+    body: "I look beyond individual screens to the processes, data and people behind them. The Knights of Éanna platform connected joining, payments, household records and committee administration in one system.",
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Product and UX",
+    items: [
+      "Product strategy",
+      "UX design",
+      "Service design",
+      "Information architecture",
+      "User journeys",
+      "Content modelling",
+      "Prototyping",
+      "Usability testing",
+    ],
+  },
+  {
+    title: "Tools and delivery",
+    items: [
+      "Figma",
+      "FigJam",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "GitHub",
+      "Vercel",
+      "AI-assisted development",
+    ],
+  },
+  {
+    title: "Business and leadership",
+    items: [
+      "Commercial strategy",
+      "Stakeholder facilitation",
+      "Team leadership",
+      "Digital publishing",
+      "Workflow design",
+    ],
+  },
+];
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+// Add testimonial entries here when approved for publication.
+const testimonials: Testimonial[] = [];
 
 export const metadata: Metadata = {
   title: "About | Susan Gallagher",
   description:
-    "About Susan Gallagher: founder experience, product judgement and modern UX practice.",
+    "About Susan Gallagher: product and UX experience across software, digital media, business building and delivery.",
 };
 
 export default function AboutPage() {
@@ -24,37 +104,185 @@ export default function AboutPage() {
             About
           </h1>
         </div>
+
         <div
           className={styles.pageBody}
           data-reveal
           style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
         >
           <p>
-            I’ve worked across software engineering, web design, digital media,
-            UX leadership and building a digital business.
+            My career has moved through software development, digital media,
+            business building and UX leadership. That range gives me a broader
+            view of product work: I understand the user experience, the
+            commercial context and the practical realities of getting products
+            built.
           </p>
           <p>
-            I co-founded One Fab Day, a luxury wedding brand and digital
-            platform that became a major commercial success and was later
-            acquired.
+            I co-founded and grew One Fab Day from an early digital publishing
+            idea into an established business with a team of 12 and multiple
+            revenue streams. The company was acquired by DMG Media in 2020.
           </p>
           <p>
-            That experience shaped how I approach product work: connecting user
-            needs, business goals and delivery realities.
-          </p>
-          <p>
-            Today, I’m focused on product and UX work where clarity,
-            judgement, delivery awareness and thoughtful use of AI matter.
+            I later led UX work across several established consumer media
+            brands. Today, I&apos;m focused on product and UX roles where
+            strategic thinking, commercial understanding and technical fluency
+            are valued.
           </p>
         </div>
-        <ExpertiseGrid />
-        <WorkingPrinciple />
+
+        <section
+          className={styles.aboutProofStrip}
+          aria-label="Career proof points"
+        >
+          {proofItems.map((item, index) => (
+            <article
+              key={item.title}
+              className={styles.aboutProofItem}
+              data-reveal
+              style={
+                { "--reveal-delay": `${140 + index * 60}ms` } as React.CSSProperties
+              }
+            >
+              <h2 className={styles.aboutMiniHeading}>{item.title}</h2>
+              <p className={styles.aboutProofText}>{item.body}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.aboutSection} aria-labelledby="what-i-bring">
+          <div className={styles.pageHeader}>
+            <h2
+              id="what-i-bring"
+              className={styles.aboutSectionHeading}
+              data-reveal
+            >
+              What I bring
+            </h2>
+          </div>
+          <div className={styles.aboutCardGrid}>
+            {bringItems.map((item, index) => (
+              <article
+                key={item.title}
+                className={styles.aboutCard}
+                data-reveal
+                style={
+                  { "--reveal-delay": `${index * 60}ms` } as React.CSSProperties
+                }
+              >
+                <h3 className={styles.aboutCardTitle}>{item.title}</h3>
+                <p className={styles.aboutCardText}>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className={styles.aboutSection}
+          aria-labelledby="skills-and-tools"
+        >
+          <div className={styles.pageHeader}>
+            <h2
+              id="skills-and-tools"
+              className={styles.aboutSectionHeading}
+              data-reveal
+            >
+              Skills and tools
+            </h2>
+          </div>
+          <div className={styles.aboutSkillGroups}>
+            {skillGroups.map((group, index) => (
+              <section
+                key={group.title}
+                className={styles.aboutSkillGroup}
+                data-reveal
+                style={
+                  { "--reveal-delay": `${index * 60}ms` } as React.CSSProperties
+                }
+              >
+                <h3 className={styles.aboutMiniHeading}>{group.title}</h3>
+                <div className={styles.aboutChipWrap}>
+                  {group.items.map((item) => (
+                    <span key={item} className={styles.aboutChip}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.aboutSection} aria-labelledby="how-i-work">
+          <div className={styles.pageHeader}>
+            <h2
+              id="how-i-work"
+              className={styles.aboutSectionHeading}
+              data-reveal
+            >
+              How I work
+            </h2>
+          </div>
+          <blockquote className={styles.aboutPullQuote} data-reveal>
+            <p className={styles.aboutPullQuoteText}>
+              I start by understanding the real problem: what users need, what
+              the organisation is trying to achieve and what the team can
+              realistically deliver. I then work across product direction, UX
+              and workflows to turn that complexity into clear decisions and
+              practical next steps.
+            </p>
+          </blockquote>
+        </section>
+
+        <section
+          className={styles.aboutSection}
+          aria-labelledby="what-people-say"
+        >
+          <div className={styles.pageHeader}>
+            <h2
+              id="what-people-say"
+              className={styles.aboutSectionHeading}
+              data-reveal
+            >
+              What people say
+            </h2>
+          </div>
+          {testimonials.length > 0 ? (
+            <div className={styles.aboutTestimonialGrid}>
+              {testimonials.map((item, index) => (
+                <article
+                  key={`${item.name}-${item.role}`}
+                  className={styles.aboutTestimonial}
+                  data-reveal
+                  style={
+                    { "--reveal-delay": `${index * 60}ms` } as React.CSSProperties
+                  }
+                >
+                  <p className={styles.aboutTestimonialQuote}>{item.quote}</p>
+                  <p className={styles.aboutTestimonialMeta}>
+                    {item.name}
+                    <br />
+                    {item.role}
+                  </p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className={styles.aboutSubtleNote} data-reveal>
+              Testimonials will be added here.
+            </p>
+          )}
+        </section>
+
         <div
           className={styles.pageBody}
           data-reveal
           style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
         >
-          <p>I’m open to new roles and collaborations.</p>
+          <p>
+            I&apos;m interested in product and UX roles where I can contribute
+            strategic, commercial and technical perspective within a
+            collaborative team.
+          </p>
         </div>
         <div
           className={styles.pageActions}

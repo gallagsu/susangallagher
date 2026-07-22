@@ -138,13 +138,6 @@
   margin: 0 auto;
 }
 
-.heroImageGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 20px;
-  align-items: stretch;
-}
-
 .heroImageFrame,
 .inlineImageFrame {
   width: 100%;
@@ -366,7 +359,6 @@
     padding: 72px 32px 56px;
   }
 
-  .heroImageGrid,
   .metadataGrid,
   .patternGrid,
   .metricsGrid,

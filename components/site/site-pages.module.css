@@ -70,6 +70,157 @@
   padding-top: 8px;
 }
 
+.aboutSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aboutSectionHeading {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.aboutProofStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.aboutProofItem {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aboutMiniHeading {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.aboutProofText,
+.aboutCardText,
+.aboutSubtleNote,
+.aboutTestimonialMeta {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.aboutCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.aboutCard {
+  border: 1px solid var(--color-border-strong);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutCardTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.333;
+}
+
+.aboutSkillGroups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.aboutSkillGroup {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutChipWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.aboutChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  border: 1px solid var(--color-border-subtle);
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.aboutPullQuote {
+  width: min(100%, 760px);
+  margin: 0;
+  background: var(--color-panel);
+  padding: 28px 32px;
+}
+
+.aboutPullQuoteText {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.aboutTestimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.aboutTestimonial {
+  border: 1px solid var(--color-border-strong);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutTestimonialQuote {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.aboutTestimonialMeta {
+  color: color-mix(in srgb, var(--color-ink) 76%, transparent);
+}
+
+.aboutSubtleNote {
+  color: color-mix(in srgb, var(--color-ink) 72%, transparent);
+}
+
 .contactPageSection {
   gap: 4px;
 }
@@ -346,6 +497,11 @@
     gap: 32px;
   }
 
+  .aboutProofStrip,
+  .aboutSkillGroups {
+    grid-template-columns: 1fr;
+  }
+
   .pageTitle {
     font-size: 48px;
   }
@@ -361,6 +517,15 @@
 }
 
 @media (max-width: 640px) {
+  .aboutSectionHeading {
+    font-size: 34px;
+  }
+
+  .aboutCardGrid,
+  .aboutTestimonialGrid {
+    grid-template-columns: 1fr;
+  }
+
   .pageTitle {
     font-size: 40px;
   }
