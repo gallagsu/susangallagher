@@ -23,41 +23,52 @@ const metadataItems = [
 
 const productValueItems = [
   {
-    title: "User value",
-    body: "Search, compare and narrow names more confidently.",
+    title: "For users",
+    body: "A clearer way to search, compare and shortlist names.",
   },
   {
-    title: "Editorial value",
-    body: "Connect high-performing articles to structured name pages.",
+    title: "For editorial",
+    body: "A structured destination linking high-performing content to useful name pages.",
   },
   {
-    title: "Business value",
-    body: "Increase page depth, repeat visits and sponsor value.",
+    title: "For the business",
+    body: "More repeat browsing, deeper sessions and clearer sponsorship potential.",
   },
 ];
 
-const schemaFields = [
-  "Meaning",
-  "Origin",
-  "Pronunciation",
-  "Gender",
-  "Popularity where available",
-  "Themes",
-  "Related editorial links",
-];
-
-const designDecisions = [
-  "Start with filters the team could support confidently.",
-  "Use editorial themes as a practical starting taxonomy.",
-  "Make results scannable through compact name cards.",
-  "Use name detail pages to show meaning, pronunciation, origin and related editorial context.",
-];
-
-const commercialItems = [
-  "Section sponsorship",
-  "Banner placements on results and name pages",
-  "Consistent sponsor exposure across repeat browsing",
-  "Clearer audience signal for pregnancy-stage advertisers",
+const decisions = [
+  {
+    label: "DECISION 01",
+    title: "Build the structure before the interface",
+    description:
+      "The existing baby-name content was written as free text, so it could not reliably support search, filtering or consistent name pages. I defined a structured Name content type that fitted the existing WordPress workflow, including fields for meaning, origin, pronunciation, gender, themes and related editorial.",
+    judgement:
+      "A clear content model made the concept searchable, maintainable and able to grow without redesigning the system each time.",
+  },
+  {
+    label: "DECISION 02",
+    title: "Support both search and discovery",
+    description:
+      "Some users would arrive with clear criteria, while others would want to browse for ideas. I designed the experience around direct search, practical filters and scannable result cards, with individual name pages providing deeper information and related content.",
+    judgement:
+      "The product needed to help people narrow a shortlist quickly without losing the open-ended exploration that makes choosing names enjoyable.",
+  },
+  {
+    label: "DECISION 03",
+    title: "Connect editorial content to the product",
+    description:
+      "Existing articles already attracted users through search and social channels. I designed links between articles, themed collections and individual name pages so people could move naturally from inspiration into structured browsing and back into relevant editorial.",
+    judgement:
+      "Connecting the two experiences reduced dead ends and gave high-performing editorial content a more useful destination.",
+  },
+  {
+    label: "DECISION 04",
+    title: "Design commercial value around genuine intent",
+    description:
+      "Baby naming is a high-interest moment within the wider pregnancy journey. The concept created a coherent destination where relevant partners could appear across search, results and name pages, rather than relying on sponsorship across disconnected articles.",
+    judgement:
+      "Commercial placements could support the product without interrupting the task users had come to complete.",
+  },
 ];
 
 const proofItems = [
@@ -65,33 +76,6 @@ const proofItems = [
   "Designed the schema, search and filter experience, and editorial linking loop.",
   "Connected user discovery, CMS maintainability and commercial opportunity.",
 ];
-
-function InlineImage({
-  src,
-  alt,
-  width,
-  height,
-  className = "",
-}: {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
-}) {
-  return (
-    <div className={`${styles.inlineImageFrame} ${className}`.trim()} data-reveal>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={styles.inlineImage}
-        sizes="(max-width: 900px) 100vw, 980px"
-      />
-    </div>
-  );
-}
 
 export function RollercoasterBabyNamesPage() {
   return (
@@ -170,40 +154,6 @@ export function RollercoasterBabyNamesPage() {
           </dl>
         </section>
 
-        <section className={styles.snapshotSection} aria-label="At a glance">
-          <div className={styles.snapshotGrid}>
-            <article className={styles.snapshotCard} data-reveal>
-              <h3 className={styles.snapshotTitle}>Problem</h3>
-              <p className={styles.snapshotText}>
-                Strong baby-name editorial existed, but the value of that evergreen content was underutilised.
-              </p>
-            </article>
-            <article
-              className={styles.snapshotCard}
-              data-reveal
-              style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
-            >
-              <h3 className={styles.snapshotTitle}>Decision</h3>
-              <p className={styles.snapshotText}>
-                Turn baby name demand into a searchable product with a
-                clear content model, filters and stronger internal
-                linking.
-              </p>
-            </article>
-            <article
-              className={styles.snapshotCard}
-              data-reveal
-              style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
-            >
-              <h3 className={styles.snapshotTitle}>What it enabled</h3>
-              <p className={styles.snapshotText}>
-                A clearer route from inspiration to shortlisting names, plus a more
-                coherent destination for repeat browsing and sponsorship.
-              </p>
-            </article>
-          </div>
-        </section>
-
         <section className={styles.copySection} aria-labelledby="opportunity">
           <div className={styles.copyGrid}>
             <div className={styles.copyStack} data-reveal>
@@ -211,15 +161,15 @@ export function RollercoasterBabyNamesPage() {
                 The opportunity
               </h2>
               <p className={styles.bodyText}>
-                Baby name content was already one of Rollercoaster.ie&apos;s
-                strongest editorial topics. It attracted search traffic, social
-                engagement and repeat interest from pregnant users.
+                Baby-name content was already one of Rollercoaster.ie&apos;s
+                strongest evergreen topics, attracting search traffic, social
+                engagement and repeat interest.
               </p>
               <p className={styles.bodyText}>
-                The opportunity was to convert one-off editorial reading into an
-                ongoing discovery journey: a searchable baby name product that
-                could support browsing, shortlisting, deeper sessions and
-                sponsorship.
+                The opportunity was to turn that demand into a structured
+                discovery experience that supported browsing, filtering and
+                shortlisting, while creating stronger connections between
+                editorial content and commercial opportunities.
               </p>
             </div>
             <blockquote
@@ -228,18 +178,14 @@ export function RollercoasterBabyNamesPage() {
               style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
             >
               <p className={styles.pullQuoteText}>
-                We had clear demand, but not yet a product.
+                The audience already existed. The opportunity was to build the
+                product around it.
               </p>
             </blockquote>
           </div>
         </section>
 
-        <section className={styles.snapshotSection} aria-labelledby="product-idea">
-          <div className={styles.sectionHeader} data-reveal>
-            <h2 id="product-idea" className={styles.sectionHeading}>
-              The value proposition
-            </h2>
-          </div>
+        <section className={styles.snapshotSection}>
           <div className={styles.trioGrid}>
             {productValueItems.map((item, index) => (
               <article
@@ -257,155 +203,32 @@ export function RollercoasterBabyNamesPage() {
           </div>
         </section>
 
-        <section className={styles.decisionsSection} aria-labelledby="content-model">
-          <div className={styles.decisionCard} data-reveal>
-            <p className={styles.decisionLabel}>DECISION 01</p>
-            <div className={styles.decisionColumns}>
-              <div className={styles.copyStack}>
-                <h2 id="content-model" className={styles.decisionTitle}>
-                  Designing the content model
-                </h2>
-                <p className={styles.bodyText}>
-                  The core design challenge was structural, not just visual.
-                  Existing baby name content was free text, so the product
-                  needed a clear content model before the interface could work.
-                </p>
-                <p className={styles.bodyText}>
-                  I defined a <strong>Name</strong> content type that could work
-                  within the existing WordPress editorial workflow.
-                  A strong schema made the experience searchable, maintainable
-                  and scalable. It allowed the team to create consistent name
-                  pages, power filters, support internal linking and extend the
-                  product over time without redesigning the system.
-                </p>
+        <section className={styles.decisionsSection} aria-label="Key decisions">
+          <div className={styles.decisionsList}>
+            {decisions.map((decision, index) => (
+              <div key={decision.label} className={styles.decisionGroup}>
+                <article
+                  className={styles.decisionCard}
+                  data-reveal
+                  style={
+                    { "--reveal-delay": `${index * 60}ms` } as React.CSSProperties
+                  }
+                >
+                  <p className={styles.decisionLabel}>{decision.label}</p>
+                  <div className={styles.decisionColumns}>
+                    <h2 className={styles.decisionTitle}>{decision.title}</h2>
+                    <div className={styles.copyStack}>
+                      <p className={styles.judgementLabel}>Description</p>
+                      <p className={styles.bodyText}>{decision.description}</p>
+                    </div>
+                    <div className={styles.judgementBlock}>
+                      <p className={styles.judgementLabel}>Why it mattered</p>
+                      <p className={styles.judgementText}>{decision.judgement}</p>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div className={styles.schemaPanel}>
-                <p className={styles.schemaHeading}>Core fields</p>
-                <ul className={styles.checkList}>
-                  {schemaFields.map((field) => (
-                    <li key={field} className={styles.checkListItem}>
-                      {field}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.decisionsSection} aria-labelledby="search-filters">
-          <div className={styles.decisionCard} data-reveal>
-            <p className={styles.decisionLabel}>DECISION 02</p>
-            <div className={styles.decisionColumns}>
-              <div className={styles.copyStack}>
-                <h2 id="search-filters" className={styles.decisionTitle}>
-                  Search, filters and name pages
-                </h2>
-                <p className={styles.bodyText}>
-                  The experience was designed around fast scanning and practical
-                  shortlisting rather than deep reading. Users could search
-                  directly, browse through filters, open detail pages, and move
-                  between names and related editorial. The aim was to make the
-                  product useful quickly: compact name cards handled scanning,
-                  detail pages carried the context, and editorial links kept
-                  discovery moving.
-                </p>
-              </div>
-              <div className={styles.schemaPanel}>
-                <p className={styles.schemaHeading}>Design decisions</p>
-                <ul className={styles.checkList}>
-                  {designDecisions.map((item) => (
-                    <li key={item} className={styles.checkListItem}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className={styles.decisionImageGallery}>
-            <figure className={styles.decisionImageFigure}>
-              <InlineImage
-                src="/home/projects/rollercoaster-searchresults.png"
-                alt="Search results page showing filters and scannable name cards"
-                width={3024}
-                height={3332}
-                className={styles.galleryImage}
-              />
-              <figcaption className={styles.decisionImageCaption}>
-                Fig 2. Search results designed for fast scanning and practical
-                narrowing.
-              </figcaption>
-            </figure>
-            <figure className={styles.decisionImageFigure}>
-              <InlineImage
-                src="/home/projects/rollercoaster-namepage.png"
-                alt="Name detail page showing meaning, pronunciation, origin and related articles"
-                width={3024}
-                height={3332}
-                className={styles.galleryImage}
-              />
-              <figcaption className={styles.decisionImageCaption}>
-                Fig 3. Name pages carry the detail while keeping related
-                editorial close by.
-              </figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section className={styles.copySection} aria-labelledby="editorial-loop">
-          <div className={styles.copyGrid}>
-            <div className={styles.copyStack} data-reveal>
-              <h2 id="editorial-loop" className={styles.sectionHeading}>
-                Creating the editorial loop
-              </h2>
-              <p className={styles.bodyText}>
-                The strongest product idea was linking existing editorial demand
-                into the structured database. Articles could link to individual
-                name pages or themed name collections. Name pages could point
-                users back to relevant editorial features.
-              </p>
-              <p className={styles.bodyText}>
-                This reduced dead ends, improved internal linking, supported SEO
-                depth and created more reasons for users to continue browsing.
-              </p>
-            </div>
-            <blockquote
-              className={styles.pullQuoteCard}
-              data-reveal
-              style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
-            >
-              <p className={styles.pullQuoteText}>
-                Editorial captured attention. The database helped users keep
-                exploring.
-              </p>
-            </blockquote>
-          </div>
-        </section>
-
-        <section className={styles.copySection} aria-labelledby="commercial-logic">
-          <div className={styles.sectionHeader} data-reveal>
-            <h2 id="commercial-logic" className={styles.sectionHeading}>
-              Commercial logic
-            </h2>
-          </div>
-          <div className={styles.evidenceGrid}>
-            <div className={styles.copyStack} data-reveal>
-              <p className={styles.bodyText}>
-                Baby naming is a high-intent, early-parenting moment. The
-                product created a clearer destination for sponsorship than
-                scattered individual articles.
-              </p>
-            </div>
-            <div className={styles.schemaPanel} data-reveal>
-              <ul className={styles.checkList}>
-                {commercialItems.map((item) => (
-                  <li key={item} className={styles.checkListItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </section>
 

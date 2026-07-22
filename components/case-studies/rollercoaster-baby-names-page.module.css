@@ -283,6 +283,18 @@
   justify-content: space-between;
 }
 
+.decisionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.decisionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .decisionCard {
   border-top: 1px solid var(--color-border-subtle);
   padding-top: 24px;
@@ -291,9 +303,14 @@
   gap: 20px;
 }
 
+.decisionGroup:first-child .decisionCard {
+  border-top: 0;
+  padding-top: 0;
+}
+
 .decisionColumns {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr) minmax(240px, 320px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(280px, 360px);
   gap: 32px;
   align-items: start;
 }
