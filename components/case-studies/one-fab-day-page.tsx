@@ -6,70 +6,56 @@ import { Header } from "@/components/home/header";
 import { MotionOrchestrator } from "@/components/home/motion-orchestrator";
 import styles from "./one-fab-day-page.module.css";
 
-const evidenceItems = [
-  "Outbound supplier clicks and navigation patterns",
-  "Supplier renewal conversations and commercial feedback",
-  "Editorial knowledge of what users valued and returned to",
-  "Approval bottlenecks and profile-quality issues",
-  "Content performance across evergreen editorial and real weddings",
-];
-
 const decisions = [
   {
-    label: "DECISION 01",
+    label: "01 —",
     title: "Reframe the directory as a curated product",
     explanation:
-      "The supplier directory was commercially important, but it risked feeling like a generic listings area. I reframed it as The Wedding Book - a curated destination rather than a database of suppliers - and gave it stronger visibility in the site structure.",
+      "The supplier directory was commercially important, but it risked feeling like a generic listings page. I repositioned it as The Wedding Book, a curated destination with a clearer place in the overall site.",
     judgement:
-      "The commercial product would only work if users believed the supplier recommendations were curated, high-quality and consistent with the editorial brand.",
+      "The recommendations needed to feel as trusted and selective as the editorial content around them.",
   },
   {
-    label: "DECISION 02",
-    title: "Bring supplier discovery into editorial moments",
+    label: "02 —",
+    title: "Bring supplier discovery into editorial content",
     explanation:
-      "Many users formed preferences while reading real weddings and inspiration features, not while actively searching a directory. I introduced contextual supplier pathways inside editorial content so discovery could happen where intent was forming.",
+      "Users often formed preferences while browsing real weddings and inspiration, rather than by visiting the directory directly. I added relevant supplier pathways within editorial content, so discovery could happen at the point where interest was developing.",
     judgement:
-      "Discovery should not depend only on search or navigation. If editorial was where trust and intent were forming, supplier pathways needed to exist there too.",
+      "Supplier discovery worked better when it followed naturally from content users already trusted.",
   },
   {
-    label: "DECISION 03",
-    title: "Make supplier browsing visual and comparable",
+    label: "03 —",
+    title: "Make supplier browsing clearer and more visual",
     explanation:
-      "Wedding supplier decisions are highly visual. I shifted browsing away from text-heavy listings and towards a more image-led, scannable structure with standardised supplier cards and clearer category pages.",
+      "I moved the experience away from text-heavy listings towards image-led category pages, consistent supplier cards and clearer profiles. I also made Visit Website the main action, giving users a more direct next step.",
     judgement:
-      "For this audience, visual confidence came before rational evaluation. The product needed to help users scan, compare and shortlist without making the experience feel cluttered.",
+      "Users could scan and compare suppliers more easily, while partners received clearer and more measurable traffic.",
   },
   {
-    label: "DECISION 04",
-    title: "Clarify the primary supplier action",
+    label: "04 —",
+    title: "Improve the workflow behind the product",
     explanation:
-      "Supplier profiles had to build trust quickly and guide users towards a meaningful next step. I made Visit Website the dominant action, accepting fewer in-platform enquiries in exchange for a clearer user journey and cleaner supplier attribution.",
+      "Maintaining a curated product depended on more than the customer-facing interface. I clarified content requirements, approval stages and team handoffs for supplier profiles, editorial links, sponsored content and renewals.",
     judgement:
-      "The best product decision was not to maximise every possible action. It was to prioritise the action that best aligned user intent, supplier value and commercial reporting.",
-  },
-  {
-    label: "DECISION 05",
-    title: "Fix the workflow behind the experience",
-    explanation:
-      "The front-end experience could only stay curated if the internal workflow supported it. Supplier profiles, editorial links, sponsored features and renewals depended on accurate content, consistent images, clear approval states and reliable handoffs.",
-    judgement:
-      "A polished interface would not solve the problem on its own. The product needed workflow foundations so the team could maintain quality and commercial value at scale.",
+      "Better internal workflows made it faster to maintain quality and keep commercial content accurate.",
   },
 ];
 
 const observedPatterns = [
   {
-    title: "Planning Modes",
+    title: "Intent changes by context",
     description:
-      "Browsing and decisions happen in different modes at different times",
+      "People browsed for inspiration before actively comparing suppliers.",
   },
   {
-    title: "Visual Trust",
-    description: "Trust in suppliers is visual before it is rational",
+    title: "Trust was highly visual",
+    description:
+      "Imagery and editorial context strongly influenced supplier confidence.",
   },
   {
-    title: "Visible Value",
-    description: "Value for suppliers must be visible and attributable",
+    title: "Value needed to be visible",
+    description:
+      "Suppliers needed clear evidence that the platform was driving meaningful traffic.",
   },
 ];
 
@@ -187,41 +173,6 @@ export function OneFabDayPage() {
           </dl>
         </section>
 
-        <section className={styles.snapshotSection} aria-label="At a glance">
-          <div className={styles.snapshotGrid}>
-            <article className={styles.snapshotCard} data-reveal>
-              <h3 className={styles.snapshotTitle}>Problem</h3>
-              <p className={styles.snapshotText}>
-                Editorial trust and traffic were strong, but supplier discovery
-                was not clearly connected to user intent.
-              </p>
-            </article>
-            <article
-              className={styles.snapshotCard}
-              data-reveal
-              style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
-            >
-              <h3 className={styles.snapshotTitle}>Decision</h3>
-              <p className={styles.snapshotText}>
-                Connect editorial, supplier discovery and internal workflows
-                into one clearer product system.
-              </p>
-            </article>
-            <article
-              className={styles.snapshotCard}
-              data-reveal
-              style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
-            >
-              <h3 className={styles.snapshotTitle}>Outcome</h3>
-              <p className={styles.snapshotText}>
-                Supplier outbound clicks increased 3x, partner renewals
-                remained above 85%, and internal approval became roughly 50%
-                faster.
-              </p>
-            </article>
-          </div>
-        </section>
-
         <section className={styles.copySection} aria-labelledby="product-tension">
           <div className={styles.copyGrid}>
             <div className={styles.copyStack} data-reveal>
@@ -254,35 +205,18 @@ export function OneFabDayPage() {
           </div>
         </section>
 
-        <section className={styles.evidenceSection}>
-          <div className={styles.sectionHeader} data-reveal>
-            <h2 className={styles.sectionLabelHeading}>Evidence Used</h2>
-          </div>
-          <div className={styles.evidenceGrid}>
-            <div className={styles.copyStack} data-reveal>
-              <p className={styles.bodyText}>
-                This was not a single redesign or one-off research sprint. The
-                work developed over time, shaped by how couples used the site,
-                what suppliers needed, and where internal workflows were
-                slowing things down.
-              </p>
-              <ul className={styles.evidenceList}>
-                {evidenceItems.map((item) => (
-                  <li key={item} className={styles.evidenceListItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.evidenceBlank} aria-hidden="true" />
-          </div>
-        </section>
-
         <section className={styles.snapshotSection} aria-labelledby="observed-patterns">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="observed-patterns" className={styles.sectionHeading}>
               Observed Patterns
             </h2>
+          </div>
+          <div className={styles.copyStack} data-reveal>
+            <p className={styles.bodyText}>
+              This was an evolving product. Decisions were shaped by data,
+              supplier conversations, editorial knowledge and operational
+              bottlenecks.
+            </p>
           </div>
           <div className={styles.snapshotGrid}>
             {observedPatterns.map((item, index) => (
@@ -332,14 +266,8 @@ export function OneFabDayPage() {
         <section className={styles.resultsSection} aria-labelledby="results">
           <div className={styles.sectionHeader} data-reveal>
             <h2 id="results" className={styles.sectionHeading}>
-              Results
+              Impact &amp; Reflection
             </h2>
-          </div>
-          <div className={styles.copyStack} data-reveal>
-            <p className={styles.bodyText}>
-              The clearest impact showed up in supplier clicks, renewals and
-              approval speed.
-            </p>
           </div>
           <div className={styles.decisionImageGallery}>
             <figure className={styles.decisionImageFigure}>
@@ -348,7 +276,7 @@ export function OneFabDayPage() {
                 alt="Editorial integration example from One Fab Day"
               />
               <figcaption className={styles.decisionImageCaption}>
-                Fig 2. Supplier links in real wedding features
+                2. Supplier links in real wedding features
               </figcaption>
             </figure>
             <figure className={styles.decisionImageFigure}>
@@ -357,7 +285,7 @@ export function OneFabDayPage() {
                 alt="Second editorial integration example from One Fab Day"
               />
               <figcaption className={styles.decisionImageCaption}>
-                Fig 3. Recommended suppliers in editorial content
+                3. Recommended suppliers in editorial content
               </figcaption>
             </figure>
             <figure className={styles.decisionImageFigure}>
@@ -366,27 +294,17 @@ export function OneFabDayPage() {
                 alt="Supplier page design from One Fab Day"
               />
               <figcaption className={styles.decisionImageCaption}>
-                Fig 4. Image-led layout to build trust
+                4. Image-led layout to build trust
               </figcaption>
             </figure>
           </div>
-          <div className={styles.resultsPanel} data-reveal>
-            <div className={styles.metricsGrid}>
-              <div className={styles.metricItem}>
-                <p className={styles.metricValue}>3x</p>
-                <p className={styles.metricLabel}>Supplier outbound clicks</p>
-              </div>
-              <div className={styles.metricItem}>
-                <p className={styles.metricValue}>&gt; 85%</p>
-                <p className={styles.metricLabel}>
-                  Partner renewals year-on-year
-                </p>
-              </div>
-              <div className={styles.metricItem}>
-                <p className={styles.metricValue}>~50%</p>
-                <p className={styles.metricLabel}>Faster approval cycle</p>
-              </div>
-            </div>
+          <div className={styles.copyStack} data-reveal>
+            <p className={styles.bodyText}>
+              The work strengthened the connection between audience intent and
+              commercial value. It made supplier discovery more visible and
+              useful for couples, gave partners clearer attributable value, and
+              created faster internal workflows for maintaining the product.
+            </p>
           </div>
         </section>
 

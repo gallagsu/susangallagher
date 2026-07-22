@@ -69,19 +69,12 @@
 .heroSection,
 .snapshotSection,
 .copySection,
-.evidenceSection,
 .decisionsSection,
 .resultsSection {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 48px;
-}
-
-.evidenceSection {
-  gap: 28px;
-  border-left: 1px solid var(--color-border-subtle);
-  padding-left: 24px;
 }
 
 .heroSection {
@@ -99,7 +92,6 @@
 .sectionLabelHeading,
 .metadataLabel,
 .snapshotLabel,
-.evidenceLabel,
 .decisionLabel,
 .judgementLabel,
 .metricLabel,
@@ -307,40 +299,9 @@
   line-height: 1.45;
 }
 
-.evidencePlaceholder {
-  min-height: 311px;
-}
-
-.evidenceBlank {
-  width: 100%;
-}
-
 .patternCard {
   min-height: 160px;
   justify-content: flex-start;
-}
-
-.evidenceList {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.evidenceListItem {
-  position: relative;
-  padding-left: 18px;
-}
-
-.evidenceListItem::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--color-ink);
 }
 
 .decisionsList {
@@ -586,7 +547,6 @@
     line-height: 1.4;
   }
 
-  .evidencePlaceholder,
   .inlinePlaceholder {
     min-height: 240px;
   }
