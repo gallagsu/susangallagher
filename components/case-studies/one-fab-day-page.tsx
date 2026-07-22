@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { getFooterNav, getPrimaryNav } from "@/components/home/home.data";
 import { Footer } from "@/components/home/footer";
 import { Header } from "@/components/home/header";
@@ -8,7 +7,7 @@ import styles from "./one-fab-day-page.module.css";
 
 const decisions = [
   {
-    label: "01 —",
+    label: "DECISION 01",
     title: "Reframe the directory as a curated product",
     explanation:
       "The supplier directory was commercially important, but it risked feeling like a generic listings page. I repositioned it as The Wedding Book, a curated destination with a clearer place in the overall site.",
@@ -16,7 +15,7 @@ const decisions = [
       "The recommendations needed to feel as trusted and selective as the editorial content around them.",
   },
   {
-    label: "02 —",
+    label: "DECISION 02",
     title: "Bring supplier discovery into editorial content",
     explanation:
       "Users often formed preferences while browsing real weddings and inspiration, rather than by visiting the directory directly. I added relevant supplier pathways within editorial content, so discovery could happen at the point where interest was developing.",
@@ -24,7 +23,7 @@ const decisions = [
       "Supplier discovery worked better when it followed naturally from content users already trusted.",
   },
   {
-    label: "03 —",
+    label: "DECISION 03",
     title: "Make supplier browsing clearer and more visual",
     explanation:
       "I moved the experience away from text-heavy listings towards image-led category pages, consistent supplier cards and clearer profiles. I also made Visit Website the main action, giving users a more direct next step.",
@@ -32,7 +31,7 @@ const decisions = [
       "Users could scan and compare suppliers more easily, while partners received clearer and more measurable traffic.",
   },
   {
-    label: "04 —",
+    label: "DECISION 04",
     title: "Improve the workflow behind the product",
     explanation:
       "Maintaining a curated product depended on more than the customer-facing interface. I clarified content requirements, approval stages and team handoffs for supplier profiles, editorial links, sponsored content and renewals.",
@@ -93,6 +92,14 @@ export function OneFabDayPage() {
             <p className={styles.sectionLabel} data-load-reveal>
               CASE STUDY / ONE FAB DAY
             </p>
+            <h1
+              className={styles.heroTitle}
+              data-load-reveal
+              style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
+            >
+              Turning a trusted digital media platform into a strong
+              commercial product
+            </h1>
             <figure className={styles.heroFigure} data-reveal>
               <Image
                 src="/home/projects/onefabday.png"
@@ -104,14 +111,6 @@ export function OneFabDayPage() {
                 sizes="(max-width: 900px) 100vw, 600px"
               />
             </figure>
-            <h1
-              className={styles.heroTitle}
-              data-load-reveal
-              style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
-            >
-              Turning a trusted digital media platform into a strong
-              commercial product
-            </h1>
             <p
               className={styles.heroSubtitle}
               data-load-reveal
@@ -276,7 +275,7 @@ export function OneFabDayPage() {
                 alt="Editorial integration example from One Fab Day"
               />
               <figcaption className={styles.decisionImageCaption}>
-                2. Supplier links in real wedding features
+                Supplier links in real wedding features
               </figcaption>
             </figure>
             <figure className={styles.decisionImageFigure}>
@@ -285,7 +284,7 @@ export function OneFabDayPage() {
                 alt="Second editorial integration example from One Fab Day"
               />
               <figcaption className={styles.decisionImageCaption}>
-                3. Recommended suppliers in editorial content
+                Recommended suppliers in editorial content
               </figcaption>
             </figure>
             <figure className={styles.decisionImageFigure}>
@@ -294,7 +293,7 @@ export function OneFabDayPage() {
                 alt="Supplier page design from One Fab Day"
               />
               <figcaption className={styles.decisionImageCaption}>
-                4. Image-led layout to build trust
+                Image-led layout to build trust
               </figcaption>
             </figure>
           </div>
@@ -308,29 +307,6 @@ export function OneFabDayPage() {
           </div>
         </section>
 
-        <section className={styles.copySection}>
-          <div className={styles.copyStack} data-reveal>
-            <p className={styles.bodyText}>
-              This work was about strengthening the link between audience intent
-              and commercial value.
-            </p>
-            <p className={styles.bodyText}>
-              The supplier directory could not behave like a generic listings
-              product. It had to feel curated, editorially consistent and
-              commercially useful at the same time.
-            </p>
-            <p className={styles.bodyText}>
-              That required decisions across navigation, content structure,
-              supplier presentation and internal workflows — improving the
-              platform without weakening the trust that made it work.
-            </p>
-          </div>
-          <div className={styles.closingActions} data-reveal>
-            <Link href="/#selected-work" className={styles.contactButton}>
-              My work
-            </Link>
-          </div>
-        </section>
       </main>
       <Footer items={getFooterNav("case-study")} brandHref="/" />
     </div>
