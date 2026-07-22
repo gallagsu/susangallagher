@@ -10,7 +10,6 @@
   --type-body-sm-size: 15px;
   --type-ui-size: 12px;
   --type-label-size: 14px;
-  --type-utility-size: 12px;
   --motion-distance-sm: 8px;
   --motion-duration-base: 560ms;
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -63,19 +62,13 @@
 .heroSection,
 .snapshotSection,
 .copySection,
-.evidenceSection,
 .decisionsSection,
+.builtSection,
 .resultsSection {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 48px;
-}
-
-.evidenceSection {
-  gap: 28px;
-  border-left: 1px solid var(--color-border-subtle);
-  padding-left: 24px;
 }
 
 .heroSection {
@@ -97,12 +90,10 @@
 }
 
 .sectionLabel,
-.sectionLabelHeading,
 .metadataLabel,
-.evidenceLabel,
 .decisionLabel,
-.metricLabel,
-.placeholderLabel {
+.judgementLabel,
+.metricLabel {
   font-family: var(--font-sans);
   font-size: var(--type-label-size);
   font-weight: 700;
@@ -129,7 +120,7 @@
   line-height: 1.2;
 }
 
-.heroSubtitle,
+.heroIntro,
 .metadataValue {
   font-family: var(--font-sans);
   font-size: var(--type-lead-lg-size);
@@ -137,233 +128,42 @@
   line-height: 1.55;
 }
 
-.heroSubtitle {
-  max-width: 880px;
+.heroIntro {
+  max-width: 820px;
 }
 
-.metadataGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  padding-top: 8px;
-}
-
-.metadataItem {
-  border-top: 1px solid var(--color-border-subtle);
-  padding-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.metadataValue {
-  font-size: var(--type-lead-size);
-  display: flex;
-  flex-direction: column;
-}
-
-.sectionHeader {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-.bodyText,
-.snapshotText,
-.evidenceListItem,
-.changedListItem {
-  font-family: var(--font-sans);
-  font-size: var(--type-body-sm-size);
-  line-height: 1.55;
-}
-
-.snapshotGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.patternGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.snapshotCard {
-  min-height: 220px;
-  border: 1px solid var(--color-border-strong);
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.patternCard {
-  min-height: 190px;
-  justify-content: flex-start;
-}
-
-.snapshotTitle,
-.cardTitle,
-.decisionTitle {
-  font-family: var(--font-serif);
-  font-size: var(--type-serif-md-size);
-  font-weight: 600;
-  line-height: 1.333;
-}
-
-.evidenceGrid,
-.copyGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.evidenceList,
-.changedList {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-}
-
-.evidenceListItem,
-.changedListItem {
-  position: relative;
-  padding-left: 18px;
-}
-
-.evidenceListItem::before,
-.changedListItem::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--color-ink);
-}
-
-.decisionsList {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.decisionCard {
-  border-top: 1px solid var(--color-border-subtle);
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.decisionsList > .decisionCard:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.decisionColumns {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: 32px;
-  align-items: start;
-}
-
-.builtGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.builtCard {
-  border-top: 1px solid var(--color-border-subtle);
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.builtMedia {
+.heroFigure {
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.builtCopy {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.heroImageGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 20px;
+  align-items: stretch;
 }
 
-.placeholder {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--color-border-subtle);
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.32),
-      rgba(255, 255, 255, 0.1)
-    ),
-    linear-gradient(
-      180deg,
-      rgba(6, 25, 7, 0.06),
-      rgba(6, 25, 7, 0.02)
-    );
-}
-
-.placeholder::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(6, 25, 7, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(6, 25, 7, 0.08) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.92),
-    rgba(0, 0, 0, 0.4)
-  );
-}
-
-.placeholderLabel {
-  position: absolute;
-  left: 24px;
-  bottom: 20px;
-  max-width: calc(100% - 48px);
-}
-
-.evidencePlaceholder {
-  min-height: 311px;
-}
-
-.evidenceBlank {
-  width: 100%;
-  min-height: 311px;
-}
-
+.heroImageFrame,
 .inlineImageFrame {
   width: 100%;
   overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
   background: var(--color-surface);
 }
 
+.heroImage,
 .inlineImage {
   width: 100%;
   height: auto;
   display: block;
 }
 
+.metricsPanel,
 .resultsPanel {
   background: var(--color-panel);
   padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
 }
 
 .metricsGrid {
@@ -388,50 +188,160 @@
 }
 
 .metricLabel {
+  max-width: 18ch;
   font-size: var(--type-ui-size);
   line-height: 1.5;
 }
 
-.closingActions {
-  padding-top: 8px;
+.metadataGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.contactButton {
-  display: inline-block;
-  position: relative;
-  border: 0;
-  background: var(--color-ink);
-  color: var(--color-white);
-  padding: 16px 40px;
+.metadataItem {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metadataValue {
+  font-size: var(--type-lead-size);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.bodyText,
+.snapshotText,
+.judgementText,
+.impactListItem {
   font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
-  text-transform: uppercase;
+  font-size: var(--type-body-sm-size);
+  line-height: 1.55;
 }
 
-.contactButton::after {
+.patternGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.snapshotCard {
+  min-height: 190px;
+  border: 1px solid var(--color-border-strong);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.snapshotTitle,
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: var(--type-serif-md-size);
+  font-weight: 600;
+  line-height: 1.333;
+}
+
+.decisionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.decisionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.decisionCard {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.decisionGroup:first-child .decisionCard {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.decisionColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(280px, 360px);
+  gap: 32px;
+  align-items: start;
+}
+
+.decisionTitle {
+  font-family: var(--font-serif);
+  font-size: var(--type-display-lg-size);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.16;
+}
+
+.judgementBlock {
+  border-left: 1px solid var(--color-border-subtle);
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.judgementLabel {
+  font-weight: 400;
+}
+
+.builtGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.builtCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.builtCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.impactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.impactListItem {
+  position: relative;
+  padding-left: 18px;
+}
+
+.impactListItem::before {
   content: "";
   position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 10px;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 220ms ease-out;
-}
-
-.contactButton:hover::after,
-.contactButton:focus-visible::after {
-  transform: scaleX(1);
-}
-
-.contactButton:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 4px;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-ink);
 }
 
 @media (max-width: 1100px) {
@@ -444,6 +354,10 @@
   .decisionColumns {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
+
+  .judgementBlock {
+    grid-column: 2;
+  }
 }
 
 @media (max-width: 900px) {
@@ -452,15 +366,18 @@
     padding: 72px 32px 56px;
   }
 
+  .heroImageGrid,
   .metadataGrid,
-  .snapshotGrid,
   .patternGrid,
-  .evidenceGrid,
-  .copyGrid,
-  .builtGrid,
   .metricsGrid,
+  .builtGrid,
   .decisionColumns {
     grid-template-columns: 1fr;
+  }
+
+  .judgementBlock {
+    grid-column: auto;
+    max-width: none;
   }
 }
 
@@ -473,26 +390,15 @@
     font-size: 40px;
   }
 
-  .heroSubtitle,
+  .heroIntro,
   .snapshotText {
     font-size: 18px;
   }
 
   .snapshotCard,
+  .metricsPanel,
   .resultsPanel {
     padding: 24px 20px;
-  }
-
-  .evidencePlaceholder,
-  .placeholder {
-    min-height: 240px;
-  }
-
-  .placeholderLabel {
-    left: 18px;
-    right: 18px;
-    bottom: 16px;
-    max-width: none;
   }
 
   .metricValue {
