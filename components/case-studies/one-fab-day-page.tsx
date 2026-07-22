@@ -107,6 +107,17 @@ export function OneFabDayPage() {
             <p className={styles.sectionLabel} data-load-reveal>
               CASE STUDY / ONE FAB DAY
             </p>
+            <figure className={styles.heroFigure} data-reveal>
+              <Image
+                src="/home/projects/onefabday.png"
+                alt="One Fab Day homepage and wedding imagery"
+                width={1512}
+                height={1110}
+                loading="eager"
+                className={styles.heroImage}
+                sizes="(max-width: 900px) 100vw, 600px"
+              />
+            </figure>
             <h1
               className={styles.heroTitle}
               data-load-reveal
@@ -175,22 +186,6 @@ export function OneFabDayPage() {
             </div>
           </dl>
         </section>
-
-        <figure className={styles.heroFigure} data-reveal>
-          <Image
-            src="/home/projects/onefabday.png"
-            alt="One Fab Day homepage and wedding imagery"
-            width={1512}
-            height={1110}
-            loading="eager"
-            className={styles.heroImage}
-            sizes="(max-width: 900px) 100vw, 600px"
-          />
-          <figcaption className={styles.heroCaption}>
-            Fig 1. The Wedding Book connected editorial trust with curated supplier
-            discovery.
-          </figcaption>
-        </figure>
 
         <section className={styles.snapshotSection} aria-label="At a glance">
           <div className={styles.snapshotGrid}>
