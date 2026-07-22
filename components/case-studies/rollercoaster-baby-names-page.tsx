@@ -102,21 +102,34 @@ export function RollercoasterBabyNamesPage() {
         <section className={styles.heroSection}>
           <div className={styles.heroCopy}>
             <p className={styles.sectionLabel} data-load-reveal>
-              SELECTED CASE STUDY / ROLLERCOASTER.IE
+              CASE STUDY / ROLLERCOASTER.IE
             </p>
             <h1
               className={styles.heroTitle}
               data-load-reveal
               style={{ "--reveal-delay": "70ms" } as React.CSSProperties}
             >
-              Rollercoaster.ie Baby Names
+              Turning a high-traffic baby-name archive into a search and
+              discovery product
             </h1>
+            <figure className={styles.heroFigure} data-reveal>
+              <Image
+                src="/home/projects/rollercoaster-hero.png"
+                alt="Rollercoaster.ie Baby Names overview showing the hub, search results and name detail screens"
+                width={3024}
+                height={2601}
+                loading="eager"
+                className={styles.heroImage}
+                sizes="(max-width: 900px) 100vw, 920px"
+              />
+            </figure>
             <p
               className={styles.heroSubtitle}
               data-load-reveal
               style={{ "--reveal-delay": "140ms" } as React.CSSProperties}
             >
-              Turning editorial demand into a baby names product experience.
+              I turned a large content archive into a more useful product for
+              browsing, filtering and comparing names.
             </p>
             <p
               className={styles.heroSummary}
@@ -128,10 +141,21 @@ export function RollercoasterBabyNamesPage() {
               return to over time, while creating a clearer sponsor-ready surface for a valuable early-parenting audience.
             </p>
           </div>
+          <div
+            className={styles.resultsPanel}
+            data-load-reveal
+            style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
+          >
+            <p className={styles.panelTitle}>Award-winning wider redesign</p>
+            <p className={styles.panelText}>
+              Rollercoaster.ie was named Media Brand of the Year following the
+              wider rebrand and redesign
+            </p>
+          </div>
           <dl
             className={styles.metadataGrid}
             data-load-reveal
-            style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
+            style={{ "--reveal-delay": "350ms" } as React.CSSProperties}
           >
             {metadataItems.map((item) => (
               <div key={item.label} className={styles.metadataItem}>
@@ -141,22 +165,6 @@ export function RollercoasterBabyNamesPage() {
             ))}
           </dl>
         </section>
-
-        <figure className={styles.heroFigure} data-reveal>
-          <Image
-            src="/home/projects/rollercoaster-hero.png"
-            alt="Rollercoaster.ie Baby Names overview showing the hub, search results and name detail screens"
-            width={3024}
-            height={2601}
-            loading="eager"
-            className={styles.heroImage}
-            sizes="(max-width: 900px) 100vw, 920px"
-          />
-          <figcaption className={styles.heroCaption}>
-            Fig 1. 
-            The Baby Names product direction.
-          </figcaption>
-        </figure>
 
         <section className={styles.snapshotSection} aria-label="At a glance">
           <div className={styles.snapshotGrid}>

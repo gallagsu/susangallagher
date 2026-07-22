@@ -374,6 +374,24 @@
 .resultsPanel {
   background: var(--color-panel);
   padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panelTitle {
+  font-family: var(--font-serif);
+  font-size: var(--type-serif-md-size);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.panelText {
+  max-width: 44ch;
+  font-family: var(--font-sans);
+  font-size: var(--type-body-sm-size);
+  line-height: 1.6;
 }
 
 .closingActions {
