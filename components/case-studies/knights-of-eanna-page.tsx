@@ -141,8 +141,8 @@ export function KnightsOfEannaPage() {
             <figure className={styles.heroFigure} data-reveal>
               <div className={styles.heroImageFrame}>
                 <Image
-                  src="/home/projects/chess-club-home.png"
-                  alt="Knights of Éanna public website and membership journey screenshot"
+                  src="/home/projects/koe-crm-laptop.png"
+                  alt="Knights of Éanna CRM shown on a laptop"
                   width={1512}
                   height={1110}
                   loading="eager"
