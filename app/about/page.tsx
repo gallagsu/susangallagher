@@ -61,7 +61,8 @@ const skillGroups = [
       "TypeScript",
       "GitHub",
       "Vercel",
-      "AI-assisted development",
+      "Claude Code",
+      "Codex",
     ],
   },
   {

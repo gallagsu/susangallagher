@@ -203,8 +203,8 @@
 }
 
 .heroFigure {
-  width: 100%;
-  max-width: 600px;
+  width: 80%;
+  max-width: none;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -425,7 +425,7 @@
 }
 
 .panelText {
-  max-width: 44ch;
+  max-width: none;
   font-family: var(--font-sans);
   font-size: var(--type-body-sm-size);
   line-height: 1.6;
@@ -493,6 +493,10 @@
   .main {
     padding: 88px 24px 64px;
     gap: 56px;
+  }
+
+  .heroFigure {
+    width: 100%;
   }
 
   .heroTitle {

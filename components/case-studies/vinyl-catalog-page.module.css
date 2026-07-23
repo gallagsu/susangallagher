@@ -166,8 +166,8 @@
 }
 
 .heroFigure {
-  width: 100%;
-  max-width: 560px;
+  width: 80%;
+  max-width: none;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -443,6 +443,11 @@
     padding: 72px 32px 56px;
   }
 
+  .heroFigure {
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .metadataGrid,
   .snapshotGrid,
   .copyGrid,
@@ -450,10 +455,6 @@
   .prototypeList,
   .decisionColumns {
     grid-template-columns: 1fr;
-  }
-
-  .heroFigure {
-    margin: 0;
   }
 }
 

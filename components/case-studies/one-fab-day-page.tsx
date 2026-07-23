@@ -102,7 +102,7 @@ export function OneFabDayPage() {
             </h1>
             <figure className={styles.heroFigure} data-reveal>
               <Image
-                src="/home/projects/onefabday.png"
+                src="/home/projects/ofd-weddingbook.png"
                 alt="One Fab Day homepage and wedding imagery"
                 width={1512}
                 height={1110}

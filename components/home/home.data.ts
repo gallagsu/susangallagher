@@ -10,11 +10,6 @@ export function getPrimaryNav(activeKey: SiteNavKey = null): NavItem[] {
       active: activeKey === "case-study",
     },
     {
-      label: "PLAY",
-      href: "/play",
-      active: activeKey === "play",
-    },
-    {
       label: "ABOUT",
       href: "/about",
       active: activeKey === "about",
@@ -33,11 +28,6 @@ export function getFooterNav(activeKey: SiteNavKey = null): NavItem[] {
       label: "WORK",
       href: "/#selected-work",
       active: activeKey === "case-study",
-    },
-    {
-      label: "PLAY",
-      href: "/play",
-      active: activeKey === "play",
     },
     {
       label: "ABOUT",
@@ -118,7 +108,7 @@ export const homeProjectItems: ProjectItem[] = [
     summary:
       "Replaced fragmented admin systems with a custom club management system built with AI-assisted workflows.",
     description: "",
-    tags: ["SERVICE DESIGN", "WORKFLOW DESIGN", "AI-ASSISTED BUILD"],
+    tags: ["SERVICE DESIGN", "WORKFLOW DESIGN", "PRODUCT BUILD"],
     image: {
       foregroundSrc: "/home/projects/koe-crm-laptop.png",
       alt: "Knights of Éanna CRM shown on a laptop",
