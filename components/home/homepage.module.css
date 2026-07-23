@@ -915,11 +915,10 @@
 @media (max-width: 640px) {
   .header {
     padding-top: 24px;
+    z-index: 120;
   }
 
   .headerInner {
-    position: relative;
-    isolation: isolate;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
@@ -935,10 +934,10 @@
   }
 
   .navPanel {
-    position: absolute;
+    position: fixed;
     left: 20px;
     right: 20px;
-    top: calc(100% + 16px);
+    top: 92px;
     display: flex;
     background: var(--color-surface);
     border: 1px solid var(--color-border-strong);
@@ -952,7 +951,7 @@
       opacity var(--motion-duration-fast) ease-out,
       transform var(--motion-duration-fast) ease-out,
       visibility 0s linear var(--motion-duration-fast);
-    z-index: 60;
+    z-index: 999;
   }
 
   .navPanelOpen {
