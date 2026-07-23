@@ -54,6 +54,7 @@ const skillGroups = [
   {
     title: "Tools and delivery",
     items: [
+      "Claude Code",
       "Figma",
       "FigJam",
       "React",
@@ -61,7 +62,6 @@ const skillGroups = [
       "TypeScript",
       "GitHub",
       "Vercel",
-      "Claude Code",
       "Codex",
     ],
   },
