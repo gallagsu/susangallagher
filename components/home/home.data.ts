@@ -106,7 +106,7 @@ export const homeProjectItems: ProjectItem[] = [
     description: "",
     tags: ["PRODUCT STRATEGY", "SEARCH & DISCOVERY", "CONTENT DESIGN"],
     image: {
-      foregroundSrc: "/home/projects/rollercoaster-casestudy.png",
+      foregroundSrc: "/home/projects/rollercoaster-home.png",
       alt: "Rollercoaster.ie Baby Names case study preview image",
       aspectRatio: "1536 / 1024",
     },

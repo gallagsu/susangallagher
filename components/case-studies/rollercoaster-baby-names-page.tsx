@@ -97,7 +97,7 @@ export function RollercoasterBabyNamesPage() {
             </h1>
             <figure className={styles.heroFigure} data-reveal>
               <Image
-                src="/home/projects/rollercoaster-hero.png"
+                src="/home/projects/rollercoaster-home.png"
                 alt="Rollercoaster.ie Baby Names overview showing the hub, search results and name detail screens"
                 width={3024}
                 height={2601}
