@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import type { NavItem } from "./home.types";
 import styles from "./homepage.module.css";
@@ -13,10 +13,38 @@ type HeaderProps = {
 export function Header({ items, brandHref = "#" }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuId = useId();
+  const headerInnerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    function handlePointerDown(event: PointerEvent) {
+      if (!headerInnerRef.current?.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className={styles.header}>
       <div
+        ref={headerInnerRef}
         className={styles.headerInner}
         data-load-reveal
         style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
@@ -55,7 +83,6 @@ export function Header({ items, brandHref = "#" }: HeaderProps) {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMenuOpen((open) => !open)}
         >
-          <span className={styles.menuToggleLabel}>Menu</span>
           <span className={styles.menuToggleIcon} aria-hidden="true">
             <span
               className={`${styles.menuToggleBar} ${
