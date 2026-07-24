@@ -63,6 +63,8 @@ const skillGroups = [
       "GitHub",
       "Vercel",
       "Codex",
+      "Webflow",
+      "Framer",
     ],
   },
   {
