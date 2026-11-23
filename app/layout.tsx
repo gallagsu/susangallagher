@@ -20,6 +20,7 @@ const libreFranklin = Libre_Franklin({
 });
 
 export const metadata: Metadata = {
+  robots: { index: false },
   title: "Susan Gallagher",
   description:
     "Creating digital products, services and workflows for a world being reshaped by AI.",
